@@ -1,0 +1,244 @@
+/* ============================================
+   RESUME SECTION - "The Official Document"
+   Professional styling with PDF embed
+   ============================================ */
+
+.resume-section {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--cream);
+}
+
+.resume-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Resume Intro */
+.resume-intro {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.resume-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--pure-black);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Resume Viewer */
+.resume-viewer {
+  margin-bottom: var(--spacing-xl);
+  background-color: var(--pure-white);
+  border: 3px solid var(--sky-blue-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Controls */
+.resume-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.download-btn,
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-sm);
+}
+
+.download-btn {
+  background: linear-gradient(135deg, var(--sky-blue-medium), var(--sky-blue-dark));
+  color: var(--pure-white);
+  border: none;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, var(--sky-blue-dark), var(--pure-black));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.view-btn {
+  background-color: var(--pure-white);
+  color: var(--sky-blue-dark);
+  border: 2px solid var(--sky-blue-medium);
+}
+
+.view-btn:hover {
+  background-color: var(--sky-blue-light);
+  border-color: var(--sky-blue-dark);
+  color: var(--pure-black);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* PDF Container */
+.pdf-container {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  background-color: var(--light-gray);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 800px;
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+.pdf-fallback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+}
+
+.pdf-fallback p {
+  font-size: 1.1rem;
+  color: var(--medium-gray);
+}
+
+.pdf-fallback a {
+  color: var(--sky-blue-dark);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.pdf-fallback a:hover {
+  color: var(--sky-blue-medium);
+}
+
+/* Resume Highlights */
+.resume-highlights {
+  margin-top: var(--spacing-xl);
+}
+
+.highlights-title {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  color: var(--sky-blue-dark);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.highlight-card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  background-color: var(--pure-white);
+  border: 2px solid var(--sky-blue-medium);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--warm-gold);
+}
+
+.highlight-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.highlight-content h4 {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--sky-blue-dark);
+  margin: 0 0 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.highlight-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--pure-black);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .download-btn,
+  .view-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .pdf-container {
+    min-height: 600px;
+  }
+
+  .pdf-iframe {
+    height: 600px;
+  }
+
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-container {
+    min-height: 500px;
+  }
+
+  .pdf-iframe {
+    height: 500px;
+  }
+
+  .highlight-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .highlight-icon {
+    font-size: 2rem;
+  }
+
+  .resume-intro p {
+    font-size: 1rem;
+  }
+}

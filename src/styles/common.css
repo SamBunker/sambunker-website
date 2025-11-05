@@ -1,0 +1,123 @@
+/* ============================================
+   COMMON COMPONENT STYLES
+   Shared styles used across multiple components
+   ============================================ */
+
+/* ============================================
+   SECTION HEADERS
+   Used in: About, Skills, Projects, Resume, Contact
+   ============================================ */
+
+.section-title {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--pure-black);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--sky-blue-dark);
+  font-style: italic;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   VERSE STYLING - Lyrical Intro Boxes
+   Used in: Hero, About, Skills, Projects, Resume, Contact
+
+   NOTE: Base .verse styling is in index.css (lines 176-218)
+   This contains the component-specific variations
+   ============================================ */
+
+/* Standard verse for most sections */
+.verse {
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl);
+  background-color: rgba(74, 144, 226, 0.08);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-sm);
+}
+
+.verse p {
+  margin: 0;
+  color: var(--pure-black);
+}
+
+/* Responsive verse sizing */
+@media (max-width: 768px) {
+  .verse {
+    padding: var(--spacing-sm);
+    font-size: 0.95rem;
+  }
+
+  .verse p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .verse p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   SUBSECTION TITLES
+   Used in: About, Skills, Resume, Contact
+   ============================================ */
+
+.subsection-title {
+  font-family: var(--font-mono);
+  font-size: 1.3rem;
+  color: var(--sky-blue-dark);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--sky-blue-medium);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   BUTTON STYLES - EXTENSIONS
+   Base button styles are in index.css
+   These are additional button variations
+   ============================================ */
+
+.btn-primary {
+  background-color: var(--sky-blue-medium);
+  color: #FFFFFF;
+}
+
+.btn-primary:hover {
+  background-color: var(--sky-blue-dark);
+}
+
+/* ============================================
+   RESPONSIVE SECTION PADDING
+   Common responsive behavior for sections
+   About, Skills, Projects, Resume, Contact sections
+   ============================================ */
+
+@media (max-width: 768px) {
+  .section,
+  .about-section,
+  .resume-section {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .section,
+  .about-section,
+  .skills-section,
+  .projects-section,
+  .resume-section,
+  .contact-section {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+}

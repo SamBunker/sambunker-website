@@ -1,0 +1,346 @@
+/* ============================================
+   ABOUT SECTION - "The Story"
+   Rap Sheet Styling with Notebook Aesthetic
+   ============================================ */
+
+.about-section {
+  padding: var(--spacing-xl);
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Text Sections */
+.about-text-section {
+  margin: var(--spacing-lg) 0;
+}
+
+.about-grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-sm);
+  color: var(--pure-black);
+}
+
+.about-text strong {
+  color: var(--sky-blue-dark);
+  font-weight: 600;
+}
+
+/* About Photo with Text Wrapping */
+.about-text-with-image {
+  position: relative;
+}
+
+.about-photo {
+  float: right;
+  width: 250px;
+  height: auto;
+  margin-left: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 3px solid var(--sky-blue-medium);
+  transition: all var(--transition-normal);
+}
+
+.about-photo:hover {
+  transform: translateY(-5px) rotate(2deg);
+  box-shadow: 0 12px 24px rgba(74, 144, 226, 0.4);
+}
+
+.about-text-with-image p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-sm);
+  color: var(--pure-black);
+  text-align: justify;
+}
+
+.about-text-with-image strong {
+  color: var(--sky-blue-dark);
+  font-weight: 600;
+}
+
+/* Education Timeline Chart */
+.education-timeline {
+  padding: var(--spacing-md) 0 6rem;
+  position: relative;
+}
+
+.timeline-chart {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline-axis {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.year-label {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sky-blue-dark);
+  flex-shrink: 0;
+}
+
+.timeline-track {
+  position: relative;
+  flex: 1;
+  height: 80px;
+  background: linear-gradient(
+    to right,
+    var(--sky-blue-medium) 0%,
+    var(--sky-blue-medium) 100%
+  );
+  background-size: 100% 3px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Timeline dot on the line */
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.timeline-dot:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* Dot circle */
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: var(--sky-blue-medium);
+  border: 3px solid var(--pure-white);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.4);
+  z-index: 1;
+}
+
+[data-theme="light"] .timeline-dot::before {
+  border-color: var(--cream);
+}
+
+.timeline-dot:hover::before {
+  background-color: var(--warm-gold);
+  box-shadow: 0 4px 12px rgba(255, 168, 52, 0.6);
+}
+
+/* Icon above the dot */
+.dot-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  transition: filter var(--transition-fast);
+  z-index: 2;
+}
+
+.timeline-dot:hover .dot-icon {
+  filter: drop-shadow(4px 4px 8px rgba(74, 144, 226, 0.6));
+}
+
+/* Year below the dot */
+.dot-year {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sky-blue-dark);
+  margin-top: 1.5rem;
+  white-space: nowrap;
+}
+
+/* Tooltip - appears below the timeline */
+.timeline-dot::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100%);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--terminal-bg);
+  color: var(--pure-white);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  white-space: pre-line;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-mono);
+  width: 320px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+[data-theme="light"] .timeline-dot::after {
+  background-color: var(--sky-blue-dark);
+  color: var(--pure-white);
+}
+
+.timeline-dot:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+/* Music Badges */
+.music-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+}
+
+.badge {
+  background: var(--sky-blue-dark);
+  color: var(--pure-white);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast);
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Achievements Grid */
+.about-achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.achievement-card {
+  background-color: var(--pure-white);
+  border: 2px solid var(--sky-blue-medium);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  text-align: center;
+  box-shadow: var(--shadow-paper);
+  transition: all var(--transition-normal);
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--warm-gold);
+}
+
+.achievement-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.achievement-card h4 {
+  font-family: var(--font-mono);
+  color: var(--sky-blue-dark);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.achievement-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: var(--pure-black);
+}
+
+.achievement-card p strong {
+  color: var(--sky-blue-dark);
+  font-weight: 600;
+}
+
+.achievement-card .year {
+  margin-top: var(--spacing-xs);
+  font-size: 0.85rem;
+  color: var(--medium-gray);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-photo {
+    width: 180px;
+    margin-left: var(--spacing-sm);
+  }
+
+  .education-timeline {
+    padding-top: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-photo {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto var(--spacing-md);
+  }
+
+  .about-text-with-image p {
+    text-align: left;
+  }
+
+  .timeline-track {
+    height: 60px;
+  }
+
+  .dot-icon {
+    font-size: 1.5rem;
+  }
+
+  .dot-year {
+    font-size: 0.7rem;
+  }
+
+  .timeline-dot::after {
+    font-size: 0.7rem;
+    max-width: 180px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .timeline-dot::before {
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .achievement-icon {
+    font-size: 2.5rem;
+  }
+}

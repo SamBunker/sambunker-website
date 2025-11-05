@@ -1,0 +1,81 @@
+import './Footer.css';
+
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-main">
+          <div className="footer-brand">
+            <h3 className="footer-logo">SAMUEL J. BUNKER</h3>
+            <p className="footer-tagline">
+              Full-Stack Developer • Hip-Hop Head • Problem Solver
+            </p>
+          </div>
+
+          <div className="footer-links">
+            <div className="footer-section">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#story">The Story</a></li>
+                <li><a href="#arsenal">The Arsenal</a></li>
+                <li><a href="#discography">The Discography</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#connect">Connect</a></li>
+              </ul>
+            </div>
+
+            <div className="footer-section">
+              <h4>Connect</h4>
+              <ul>
+                <li>
+                  <a href="mailto:samuelbunker@live.com" target="_blank" rel="noopener noreferrer">
+                    📧 Email
+                  </a>
+                </li>
+                <li>
+                  <a href="https://linkedin.com/in/samuel-bunker" target="_blank" rel="noopener noreferrer">
+                    💼 LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/samuelbunker" target="_blank" rel="noopener noreferrer">
+                    💻 GitHub
+                  </a>
+                </li>
+                <li>
+                  <a href="https://behance.net/samuelbunker" target="_blank" rel="noopener noreferrer">
+                    🎨 Behance
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="footer-section">
+              <h4>Tech Stack</h4>
+              <ul>
+                <li>React • Node.js • PHP</li>
+                <li>MySQL • MongoDB</li>
+                <li>Express • Handlebars</li>
+                <li>HTML5 • CSS3 • JavaScript</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <div className="footer-quote">
+            <p>"Built with React, designed with soul, optimized for goals"</p>
+          </div>
+          <div className="footer-copyright">
+            <p>© {currentYear} Samuel J. Bunker • Boom-bap beats meet clean code sheets</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

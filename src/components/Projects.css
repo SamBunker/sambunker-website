@@ -1,0 +1,280 @@
+/* ============================================
+   PROJECTS SECTION - "The Discography"
+   Album/Mixtape Aesthetic
+   ============================================ */
+
+.projects-section {
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+/* Project Card - Album Cover Style */
+.project-card {
+  background-color: var(--pure-white);
+  border: 3px solid var(--sky-blue-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--sky-blue-medium), var(--warm-gold));
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Status-specific borders */
+.project-card.platinum {
+  border-color: #B9F2FF;
+}
+
+.project-card.platinum::before {
+  background: linear-gradient(90deg, #B9F2FF, #87CEEB);
+}
+
+.project-card.gold {
+  border-color: var(--warm-gold);
+}
+
+.project-card.gold::before {
+  background: linear-gradient(90deg, var(--warm-gold), #FFD700);
+}
+
+.project-card.silver {
+  border-color: #C0C0C0;
+}
+
+.project-card.silver::before {
+  background: linear-gradient(90deg, #C0C0C0, #E8E8E8);
+}
+
+.project-card.trophy {
+  border-color: #FFD700;
+}
+
+.project-card.trophy::before {
+  background: linear-gradient(90deg, #FFD700, var(--warm-gold));
+}
+
+.project-card.creative {
+  border-color: #9B59B6;
+}
+
+.project-card.creative::before {
+  background: linear-gradient(90deg, #9B59B6, #E91E63);
+}
+
+/* Status Badge */
+.project-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--sky-blue-medium), var(--sky-blue-dark));
+  color: var(--pure-white);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.platinum .project-status-badge {
+  background: linear-gradient(135deg, #87CEEB, #4A90E2);
+}
+
+.gold .project-status-badge {
+  background: linear-gradient(135deg, var(--warm-gold), #FFD700);
+  color: var(--pure-black);
+}
+
+.silver .project-status-badge {
+  background: linear-gradient(135deg, #C0C0C0, #A8A8A8);
+  color: var(--pure-black);
+}
+
+.trophy .project-status-badge {
+  background: linear-gradient(135deg, #FFD700, var(--warm-gold));
+  color: var(--pure-black);
+}
+
+.creative .project-status-badge {
+  background: linear-gradient(135deg, #9B59B6, #E91E63);
+}
+
+.badge-icon {
+  font-size: 1.1rem;
+}
+
+.badge-label {
+  font-size: 0.75rem;
+}
+
+/* Project Header */
+.project-header {
+  margin-bottom: var(--spacing-sm);
+}
+
+.project-title {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--sky-blue-dark);
+  margin: 0 0 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-subtitle {
+  font-size: 0.95rem;
+  color: var(--medium-gray);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Description */
+.project-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--pure-black);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Tech Tags */
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.tech-tag {
+  background-color: rgba(74, 144, 226, 0.1);
+  color: var(--sky-blue-dark);
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+/* Achievements */
+.project-achievements {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.achievement-badge {
+  font-size: 0.85rem;
+  color: var(--pure-black);
+  padding: 0.3rem 0;
+  border-left: 3px solid var(--warm-gold);
+  padding-left: 0.5rem;
+}
+
+/* Project Links */
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--light-gray);
+}
+
+.project-link {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.6rem 1rem;
+  text-align: center;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-link.live {
+  background-color: var(--sky-blue-medium);
+  color: var(--pure-white);
+}
+
+.project-link.live:hover {
+  background-color: var(--sky-blue-dark);
+  transform: translateY(-2px);
+}
+
+.project-link.github {
+  background-color: var(--pure-black);
+  color: var(--pure-white);
+}
+
+.project-link.github:hover {
+  background-color: var(--dark-gray);
+  transform: translateY(-2px);
+}
+
+/* View More Section */
+.view-more {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+.view-more .btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-links {
+    flex-direction: column;
+  }
+
+  .project-link {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card {
+    padding: var(--spacing-sm);
+  }
+
+  .project-title {
+    font-size: 1.2rem;
+  }
+
+  .badge-label {
+    display: none;
+  }
+
+  .badge-icon {
+    font-size: 1.3rem;
+  }
+}

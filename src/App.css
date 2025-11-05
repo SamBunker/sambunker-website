@@ -1,0 +1,50 @@
+/* ============================================
+   APP COMPONENT STYLES
+   ============================================ */
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Section Alternating Backgrounds */
+.section:nth-child(even) {
+  background-color: var(--cream);
+}
+
+.section:nth-child(odd) {
+  background-color: var(--beige);
+}
+
+/* Rap Sheet Sections */
+.rap-sheet {
+  position: relative;
+  background-color: var(--cream);
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 31px,
+      rgba(74, 144, 226, 0.05) 31px,
+      rgba(74, 144, 226, 0.05) 32px
+    );
+    color: black;
+}
+
+/* Section Headers */
+.section h2 {
+  font-family: var(--font-mono);
+  color: var(--pure-black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Smooth Scrolling Offset for Fixed Navbar */
+section {
+  scroll-margin-top: 80px;
+}
