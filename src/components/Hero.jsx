@@ -1,4 +1,5 @@
 import './Hero.css';
+import meImage from '../assets/images/me.webp';
 
 const Hero = () => {
   const scrollToSection = (id) => {
@@ -10,6 +11,11 @@ const Hero = () => {
 
   return (
     <section id="home" className="hero">
+      {/* Background Photo */}
+      <div className="hero-photo-background">
+        <img src={meImage} alt="Samuel Bunker" className="hero-photo" />
+      </div>
+
       <div className="hero-container">
         <div className="hero-terminal">
           <div className="terminal-output">
@@ -28,7 +34,7 @@ const Hero = () => {
 
           <h1 className="hero-title">SAMUEL J. BUNKER</h1>
           <p className="hero-subtitle">
-            Full-Stack Developer • Hip-Hop Head • Problem Solver
+            Full-Stack Developer • Problem Solver • Hip-Hop Head
           </p>
 
           <div className="hero-buttons">
@@ -55,7 +61,7 @@ const Hero = () => {
             <span className="divider">•</span>
             <span>Python</span>
             <span className="divider">•</span>
-            <span>Boom-Bap Soul</span>
+            <span>DevOps</span>
           </div>
         </div>
 
