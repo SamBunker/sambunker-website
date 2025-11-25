@@ -21,14 +21,14 @@ const Contact = () => {
         <div className="contact-content">
           <div className="contact-info">
             <h3 className="contact-heading">GET IN TOUCH</h3>
-            <p className="contact-text">
+            <p className="contact-text text-content">
               Whether you need a full-stack developer, a UI/UX designer, or someone who brings
               both technical skills and creative vision—let's talk.
             </p>
 
             <div className="contact-details">
               <a href="mailto:samuelbunker@live.com" className="contact-item">
-                <span className="contact-icon">📧</span>
+                <span className="contact-icon icon-sm">📧</span>
                 <div className="contact-item-text">
                   <strong>Email</strong>
                   <span>samuelbunker@live.com</span>
@@ -36,7 +36,7 @@ const Contact = () => {
               </a>
 
               <a href="tel:+17174466875" className="contact-item">
-                <span className="contact-icon">📱</span>
+                <span className="contact-icon icon-sm">📱</span>
                 <div className="contact-item-text">
                   <strong>Phone</strong>
                   <span>(717) 446-6875</span>
@@ -49,7 +49,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="contact-item"
               >
-                <span className="contact-icon">💼</span>
+                <span className="contact-icon icon-sm">💼</span>
                 <div className="contact-item-text">
                   <strong>LinkedIn</strong>
                   <span>linkedin.com/in/sambunker</span>
@@ -62,7 +62,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="contact-item"
               >
-                <span className="contact-icon">💻</span>
+                <span className="contact-icon icon-sm">💻</span>
                 <div className="contact-item-text">
                   <strong>GitHub</strong>
                   <span>github.com/SamBunker</span>
@@ -75,7 +75,7 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="contact-item"
               >
-                <span className="contact-icon">🎨</span>
+                <span className="contact-icon icon-sm">🎨</span>
                 <div className="contact-item-text">
                   <strong>Behance</strong>
                   <span>behance.net/samuelbunker</span>
