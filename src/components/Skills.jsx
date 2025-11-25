@@ -219,20 +219,20 @@ const Skills = () => {
           <h3 className="extras-title">🎯 THE EXTRAS</h3>
           <div className="extras-grid">
             <div className="extra-card">
-              <h4>Project Management</h4>
-              <p>Agile • Scrum • Waterfall</p>
+              <h4>Product Sales</h4>
+              <p>Tap Me In • Net $1,000 in the first year from $0 while in college</p>
             </div>
             <div className="extra-card">
-              <h4>Cybersecurity</h4>
-              <p>$900K+ Projects Managed</p>
+              <h4>Project Management</h4>
+              <p>Managed over $900,000 in cybersecurity projects (NIST, HIPAA)</p>
             </div>
             <div className="extra-card">
               <h4>Hackathons</h4>
-              <p>2x First Place Winner</p>
+              <p>2x First Place Winner • Web Development (UI/UX Design and Implementation)</p>
             </div>
             <div className="extra-card">
-              <h4>Performance</h4>
-              <p>Lighthouse 99 Master</p>
+              <h4>Self-Hosting</h4>
+              <p>Manage homelab with multiple microservices, websites, and Discord bots</p>
             </div>
           </div>
         </div>

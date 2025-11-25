@@ -173,75 +173,7 @@ a:focus-visible {
     );
 }
 
-.verse {
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) var(--spacing-lg);
-  font-family: var(--font-handwriting);
-  background:
-    repeating-linear-gradient(
-      transparent,
-      transparent 31px,
-      rgba(135, 206, 235, 0.3) 31px,
-      rgba(135, 206, 235, 0.3) 32px
-    ),
-    linear-gradient(to bottom, #fffbd6 0%, #f0eed5 100%);
-  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) 3.5rem;
-  margin: var(--spacing-md) 0;
-  font-style: normal;
-  line-height: 2;
-  font-size: 1.6rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  position: relative;
-  transform: rotate(-1deg);
-  border-left: 4px solid var(--pure-black);
-  /* Torn edge effect using clip-path */
-  clip-path: polygon(
-    0% 2%, 1% 0%, 3% 1%, 5% 0%, 7% 2%, 9% 1%, 11% 0%, 13% 1%,
-    15% 0%, 17% 2%, 19% 1%, 21% 0%, 23% 2%, 25% 1%, 27% 0%,
-    29% 1%, 31% 0%, 33% 2%, 35% 1%, 37% 0%, 39% 1%, 41% 0%,
-    43% 2%, 45% 1%, 47% 0%, 49% 1%, 51% 0%, 53% 2%, 55% 1%,
-    57% 0%, 59% 2%, 61% 1%, 63% 0%, 65% 1%, 67% 0%, 69% 2%,
-    71% 1%, 73% 0%, 75% 2%, 77% 1%, 79% 0%, 81% 1%, 83% 0%,
-    85% 2%, 87% 1%, 89% 0%, 91% 1%, 93% 0%, 95% 2%, 97% 1%,
-    99% 0%, 100% 2%,
-    100% 98%, 99% 100%, 97% 99%, 95% 100%, 93% 98%, 91% 99%,
-    89% 100%, 87% 99%, 85% 100%, 83% 98%, 81% 99%, 79% 100%,
-    77% 99%, 75% 100%, 73% 98%, 71% 99%, 69% 100%, 67% 99%,
-    65% 100%, 63% 98%, 61% 99%, 59% 100%, 57% 98%, 55% 99%,
-    53% 100%, 51% 99%, 49% 100%, 47% 98%, 45% 99%, 43% 100%,
-    41% 99%, 39% 100%, 37% 98%, 35% 99%, 33% 100%, 31% 99%,
-    29% 100%, 27% 98%, 25% 99%, 23% 100%, 21% 99%, 19% 100%,
-    17% 98%, 15% 99%, 13% 100%, 11% 99%, 9% 100%, 7% 98%,
-    5% 99%, 3% 100%, 1% 99%, 0% 98%
-  );
-  
-}
-
-/* Red margin line like notebook paper */
-.verse::before {
-  content: '';
-  position: absolute;
-  left: 2.5rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background-color: rgba(255, 0, 0, 0.3);
-}
-
-[data-theme="dark"] .verse {
-  background:
-    repeating-linear-gradient(
-      transparent,
-      transparent 31px,
-      rgba(135, 206, 235, 0.2) 31px,
-      rgba(135, 206, 235, 0.2) 32px
-    ),
-    linear-gradient(to bottom, #F5F5E8 0%, #F0F0E0 100%);
-}
-
-[data-theme="dark"] .verse::before {
-  background-color: rgba(200, 0, 0, 0.4);
-}
+/* Verse styling is now in common.css */
 
 /* Highlighter Styles - Rough pen strokes like real highlighter */
 .highlight-yellow {

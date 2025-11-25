@@ -8,7 +8,6 @@
   background-color: var(--beige);
 }
 
-/* Skills Grid */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

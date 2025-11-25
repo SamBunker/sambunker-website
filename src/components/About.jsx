@@ -1,124 +1,95 @@
 import './About.css';
-
-// Timeline data from 2018 to 2028
-const timelineData = [
-  {
-    year: 2019,
-    icon: "🎨",
-    label: "Graphic Design Certificate",
-    description: "Graphic Design Certificate\nFranklin County Career & Technology Center"
-  },
-  {
-    year: 2020,
-    icon: "🏫",
-    label: "Chambersburg Area Senior High School",
-    description: "Graduated from\nChambersburg Area Senior High School"
-  },
-  {
-    year: 2024,
-    icon: "🎓",
-    label: "Juniata College",
-    description: "B.Sc. in Information Technology\nMinor Computer Science\nJuniata College"
-  },
-  {
-    year: 2026,
-    icon: "❓",
-    label: "Future Education",
-    description: "Masters Degree?\nFuture Educational Opportunities?"
-  }
-];
-
-const EducationTimeline = () => {
-  const startYear = 2018;
-  const endYear = 2028;
-  const totalYears = endYear - startYear;
-
-  // Calculate position for each milestone (0-100%)
-  const getPosition = (year) => {
-    return ((year - startYear) / totalYears) * 100;
-  };
-
-  return (
-    <div className="timeline-chart">
-      <div className="timeline-axis">
-        {/* Start year label */}
-        <span className="year-label year-start">{startYear}</span>
-
-        {/* Timeline line with dots */}
-        <div className="timeline-track">
-          {timelineData.map((event, index) => (
-            <div
-              key={index}
-              className="timeline-dot"
-              style={{ left: `${getPosition(event.year)}%` }}
-              data-tooltip={event.description}
-            >
-              <span className="dot-icon">{event.icon}</span>
-              <span className="dot-year">{event.year}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* End year label */}
-        <span className="year-label year-end">{endYear}</span>
-      </div>
-    </div>
-  );
-};
+import { useState, useEffect, useRef } from 'react';
+import youngSamuelImage from '../assets/images/young-samuel-and-david.webp';
+import aboutImage from '../assets/images/home.webp';
 
 const About = () => {
+  const photoRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            entry.target.classList.add('animate');
+            setHasAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (photoRef.current) {
+      observer.observe(photoRef.current);
+    }
+
+    return () => {
+      if (photoRef.current) {
+        observer.unobserve(photoRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
   return (
     <section id="story" className="about-section section rap-sheet">
+      {/* Graffiti Background Text */}
+      <div className="graffiti-text" aria-hidden="true">
+        <span className="graffiti-line">BUILD</span>
+        <span className="graffiti-line">BELIEVE</span>
+        <span className="graffiti-line">BECOME</span>
+      </div>
+
       <div className="container">
+        {/* Home Photo at Top */}
+        <div className="about-hero-image">
+          <img src={aboutImage} alt="Samuel's Home" className="home-photo" />
+        </div>
+
         <h2 className="section-title">// THE STORY \\</h2>
-        <p className="section-subtitle">"From the Code to the Booth"</p>
+        <p className="section-subtitle">"Back to My Roots"</p>
 
         {/* Bar 1 - Tech Side */}
         <div className="about-content">
           <div className="verse">
             <p>
-              "Started from the tech, hands dirty with the <span className="highlight-yellow">code</span>,<br />
-              Fascinated by the systems, learning every <span className="highlight-yellow">mode</span>,<br />
-              From hardware to software, I'm a hands-on <span className="highlight-orange">learner</span>,<br />
-              Every bug I squash makes my passion burn <span className="highlight-orange">warmer</span>."
+              "Dad showed me tech on Dunham Drive back <span className="highlight-yellow">then</span>,<br />
+              Took apart machines just to build 'em <span className="highlight-yellow">again</span>,<br />
+              From broken parts to building apps that <span className="highlight-orange">glow</span>,<br />
+              Every challenge faced made my passion <span className="highlight-orange">overflow</span>."
             </p>
           </div>
 
           <div className="about-text-section">
-            <h3 className="subsection-title">WHO I AM</h3>
+            <h3 className="subsection-title">🎤 WHO I AM</h3>
+
             <div className="about-grid">
-              <div className="about-text-with-image">
-                <img src="/img/me.jpg" alt="Samuel Bunker" className="about-photo" />
+              <div className="about-text-with-image text-content">
+                {/* Photo with Drag & Drop Cursor Animation */}
+                <div className="photo-drop-container" ref={photoRef}>
+                  <div className="cursor-animation" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="animated-cursor">
+                      <path d="M3 3L10.07 19.97L12.58 12.58L19.97 10.07L3 3Z" fill="white" stroke="black" strokeWidth="2"/>
+                    </svg>
+                  </div>
+                  <img src={youngSamuelImage} alt="Samuel Bunker" className="about-photo" />
+                </div>
                 <p>
-                  Information Technology graduate from <strong>Juniata College</strong>, but that's just the surface.
-                  I'm a hands-on learner who fiddles with technology like Eminem spits bars—everything fascinates me.
+                  Son of George Bunker and Sarah Bunker, whom I also shared a house with my older three brothers.
+                  I grew up in North Carolina and then soon moved to Pennsylvania. I recently graduated from
+                  <strong> Juniata College</strong> with a Bachelor's of Science in Information Technology.
                 </p>
                 <p>
-                  Whether it's building full-stack web applications, optimizing server infrastructure, or designing
-                  clean user interfaces, I dive deep into every project. I don't just write code; I craft solutions
-                  that perform.
+                 I fell in love with computers because of my Dad. His intuition and passion drove me further to
+                  explore and fittle with technology. For many years now I've been passionate about web design and development.
+                  Being able to create something from nothing and share it with anyone else on the internet is exciting!
                 </p>
               </div>
             </div>
-
-            {/* Education Timeline Chart */}
-            <h3 className="subsection-title">Educational Timeline</h3>
-            <div className="education-timeline">
-              <EducationTimeline />
-            </div>
           </div>
 
-          {/* Bar 2 - Hip-Hop Side */}
-          <div className="verse">
-            <p>
-              "But yo, that's just half of what defines my <span className="highlight-pink">name</span>,<br />
-              Hip-hop in my veins like I'm running this <span className="highlight-pink">game</span>,<br />
-              From Em to J-Cole, Joyner Lucas on <span className="highlight-green">repeat</span>,<br />
-              Boom-bap snare and bass got me moving to the <span className="highlight-green">beat</span>."
-            </p>
-          </div>
-
-          <div className="about-text-section">
+          {/* <div className="about-text-section">
             <h3 className="subsection-title">THE MUSIC</h3>
             <div className="about-grid">
               <div className="about-text">
@@ -132,17 +103,12 @@ const About = () => {
                   Hip-hop taught me about rhythm, flow, and storytelling—skills that translate directly into
                   how I approach problem-solving in code.
                 </p>
-                <div className="music-badges">
-                  <span className="badge">🎤 Freestyle Rapper</span>
-                  <span className="badge">🎧 Boom-Bap Enthusiast</span>
-                  <span className="badge">🔥 Real</span>
-                </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Bar 3 - The Blend */}
-          <div className="verse">
+          {/* <div className="verse">
             <p>
               "Code bars and lyrical scars, that's my <span className="highlight-yellow">repertoire</span>,<br />
               From React components to verses I <span className="highlight-yellow">record</span>,<br />
@@ -166,10 +132,10 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Education & Achievements */}
-          <div className="about-achievements">
+          {/* <div className="about-achievements">
             <div className="achievement-card">
               <div className="achievement-icon">🎓</div>
               <h4>Education</h4>
@@ -195,6 +161,74 @@ const About = () => {
               <p>Juniata Hackathon 2023</p>
               <p>Juniata Hackathon 2022</p>
               <p className="year">React & UI/UX</p>
+            </div>
+          </div> */}
+
+          {/* Entrepreneurial Drive Section */}
+          <div className="about-text-section">
+            <div className="entrepreneurial-intro">
+              <p className="intro-statement">
+                "With a passion for technology and a love for connecting with people,
+                I couldn't let my skills sit idle—I've always dreamed of building something of my own."
+              </p>
+            </div>
+          </div>
+
+          {/* Small Business Owner Section */}
+          <div className="about-text-section">
+            <h3 className="subsection-title">💼 SMALL BUSINESS OWNER</h3>
+            <div className="business-content">
+              {/* Business Card Image - Floats Left */}
+              <div className="business-card-float">
+                <img
+                  src="/img/tapmein.png"
+                  alt="Tap Me In NFC Business Card"
+                  className="business-card-image"
+                />
+              </div>
+
+              {/* Text Content - Wraps Around Card */}
+              <div className="business-text text-content">
+                <h4 className="business-title card-title">Tap Me In</h4>
+                <p className="business-subtitle card-subtitle">NFC Business Cards</p>
+
+                <p>
+                  Founded and operate <strong>Tap Me In</strong>, a small business specializing in
+                  NFC-tappable business cards. We serve students looking to stand out and enterprise
+                  companies seeking modern networking solutions.
+                </p>
+              </div>
+
+              {/* Full-width content below image */}
+              <div className="business-text-full text-content">
+                <p>
+                  Leading <strong>Tap Me In</strong> from concept to execution, I oversee product design,
+                  web management, e-commerce operations, and customer relations alongside a dedicated team.
+                  Building a business from the ground up taught me resilience, adaptability, and the
+                  importance of collaboration and delivering value.
+                </p>
+                <p>
+                  <strong>The official web application dashboard is currently in development.</strong> Stay
+                  tuned for a full-featured platform to manage and customize your NFC business cards.
+                </p>
+
+                <div className="business-buttons">
+                  <a
+                    href="https://www.tapmein.online"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-blueprint"
+                  >
+                    <span>Visit Tap Me In</span>
+                    <span className="button-arrow">→</span>
+                  </a>
+
+                  <button className="btn-blueprint-disabled" disabled>
+                    <span className="badge-pulse-white"></span>
+                    <span>Dashboard Coming Soon</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

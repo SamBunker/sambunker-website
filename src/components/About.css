@@ -5,16 +5,94 @@
 
 .about-section {
   padding: var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Graffiti Background Text */
+.graffiti-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  user-select: none;
+}
+
+[data-theme="light"] .graffiti-text {
+  opacity: 0.06;
+}
+
+.graffiti-line {
+  position: absolute;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: clamp(15rem, 8vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--sky-blue-medium);
+  text-stroke: 3px var(--sky-blue-medium);
+  animation: graffiti-float 20s ease-in-out infinite;
+  transform-origin: left center;
+  left: 2%;
+}
+
+.graffiti-line:nth-child(1) {
+  top: 20%;
+  left: 2%;
+}
+
+.graffiti-line:nth-child(2) {
+  top: 40%;
+  left: auto;
+  right: 2%;
+}
+
+.graffiti-line:nth-child(3) {
+  top: 60%;
+  left: 2%;
+}
+
+
+[data-theme="light"] .graffiti-line {
+  -webkit-text-stroke: 2px var(--sky-blue-dark);
+  text-stroke: 2px var(--sky-blue-dark);
+}
+
+/* Home Photo at Top */
+.about-hero-image {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.home-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 500px;
 }
 
 .about-content {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* Text Sections */
 .about-text-section {
   margin: var(--spacing-lg) 0;
+  position: relative;
 }
 
 .about-grid {
@@ -22,52 +100,122 @@
   gap: var(--spacing-md);
 }
 
-.about-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: var(--spacing-sm);
-  color: var(--pure-black);
-}
-
-.about-text strong {
-  color: var(--sky-blue-dark);
-  font-weight: 600;
-}
+/* Use .text-content from common.css for paragraph styling */
 
 /* About Photo with Text Wrapping */
 .about-text-with-image {
   position: relative;
 }
 
-.about-photo {
+/* Photo Drop Container with Cursor Animation */
+.photo-drop-container {
   float: right;
-  width: 250px;
-  height: auto;
+  position: relative;
   margin-left: var(--spacing-md);
   margin-bottom: var(--spacing-md);
+}
+
+.cursor-animation {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.animated-cursor {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Only animate when .animate class is added */
+.photo-drop-container.animate .cursor-animation {
+  animation: cursorDragDrop 2.5s ease-in-out forwards;
+}
+
+@keyframes cursorDragDrop {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(140px, 140px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(140px, 140px) scale(0.9);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(140px, 140px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(140px, 140px);
+  }
+}
+
+.about-photo {
+  width: 250px;
+  height: auto;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  border: 3px solid var(--sky-blue-medium);
+  /* border: 3px solid var(--sky-blue-medium); */
   transition: all var(--transition-normal);
+  /* Fallback to visible in case animation doesn't trigger */
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Animate when .animate class is added - override base visible state */
+.photo-drop-container:not(.animate) .about-photo {
+  /* Hide photo until animation triggers, but only on larger screens */
+  opacity: 0;
+  transform: translate(-140px, -140px) scale(0.3);
+}
+
+.photo-drop-container.animate .about-photo {
+  animation: photoDrop 2.5s ease-in-out forwards;
+}
+
+@keyframes photoDrop {
+  0% {
+    opacity: 0;
+    transform: translate(-140px, -140px) scale(0.3);
+  }
+  10% {
+    opacity: 0.3;
+    transform: translate(-140px, -140px) scale(0.3);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(0, 0) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
 }
 
 .about-photo:hover {
   transform: translateY(-5px) rotate(2deg);
-  box-shadow: 0 12px 24px rgba(74, 144, 226, 0.4);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 .about-text-with-image p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: var(--spacing-sm);
-  color: var(--pure-black);
   text-align: justify;
 }
 
-.about-text-with-image strong {
-  color: var(--sky-blue-dark);
-  font-weight: 600;
-}
+/* Use .text-content from common.css for paragraph styling */
 
 /* Education Timeline Chart */
 .education-timeline {
@@ -80,14 +228,15 @@
   max-width: 800px;
   margin: 0 auto;
   position: relative;
-}
-
-.timeline-axis {
-  position: relative;
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 0 1rem;
+}
+
+/* Hide grid by default (only show on mobile) */
+.timeline-grid {
+  display: none;
 }
 
 .year-label {
@@ -211,6 +360,409 @@
   transform: translateX(-50%) translateY(5px);
 }
 
+/* GitHub Contribution Graph */
+.github-contributions {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--pure-white);
+  border: 3px solid var(--sky-blue-medium);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.contributions-header {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.contributions-tagline {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--sky-blue-dark);
+  margin: 0;
+}
+
+.contributions-graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.contribution-chart {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.contributions-footer {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 2px solid var(--sky-blue-light);
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sky-blue-dark);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(74, 144, 226, 0.1);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.github-link:hover {
+  background-color: var(--sky-blue-medium);
+  color: var(--pure-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.link-arrow {
+  font-size: 1.3rem;
+  transition: transform var(--transition-fast);
+}
+
+.github-link:hover .link-arrow {
+  transform: translateX(5px);
+}
+
+/* GitHub Stats Container - Blueprint Style with Text Wrap */
+.github-stats-wrapper {
+  position: relative;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  overflow: visible;
+  padding: 4px 0 4px 4px;
+}
+
+.github-stats-wrapper::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.stat-card-blueprint {
+  float: left;
+  background: var(--cream);
+  border: 3px solid var(--pure-black);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  min-width: 280px;
+  max-width: 320px;
+  margin-right: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.stat-card-blueprint:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(74, 144, 226, 0.4);
+  border-color: var(--sky-blue-medium);
+}
+
+/* Use .icon-xl from common.css */
+.stat-icon {
+  margin-bottom: var(--spacing-md);
+}
+
+.stat-card-blueprint h4 {
+  font-family: var(--font-mono);
+  color: var(--pure-black);
+  font-size: 1.1rem;
+  margin: 0 0 var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--sky-blue-medium);
+  margin: var(--spacing-sm) 0;
+  line-height: 1;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--sky-blue-dark);
+  margin: var(--spacing-sm) 0 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-description {
+  overflow: visible;
+  padding-bottom: var(--spacing-sm);
+}
+
+.stat-description p {
+  text-align: justify;
+}
+
+/* Use .text-content from common.css */
+
+/* Use .btn-blueprint from common.css for buttons */
+.github-view-button {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Embedded Contribution Graph */
+.contributions-graph-embedded {
+  width: 100%;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--cream);
+  border: 3px solid var(--pure-black);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  clear: both;
+}
+
+.contribution-chart-embedded {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Work in Progress Section */
+.wip-section {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: rgba(74, 144, 226, 0.03);
+  border: 2px dashed var(--sky-blue-medium);
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+[data-theme="light"] .wip-section {
+  background-color: rgba(74, 144, 226, 0.05);
+}
+
+.wip-header {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Use .badge from common.css */
+
+.editable-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--pure-black);
+}
+
+.editable-text p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Google Docs-style Live Cursor */
+.live-cursor {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.2em;
+}
+
+.cursor-tooltip {
+  position: absolute;
+  /* bottom: 100%; */
+  left: 10px;
+  background-color: var(--sky-blue-dark);
+  color: var(--pure-white);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  pointer-events: none;
+  font-family: var(--font-mono);
+}
+
+/* .cursor-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 15px;
+  border: 5px solid transparent;
+  border-top-color: var(--sky-blue-dark);
+} */
+
+.cursor-line {
+  display: inline-block;
+  color: var(--sky-blue-dark);
+  font-weight: 900;
+  font-size: 1.3em;
+  line-height: 1;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.wip-note {
+  font-size: 0.95rem;
+  color: var(--medium-gray);
+  font-style: italic;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: rgba(255, 168, 52, 0.08);
+  border-left: 3px solid var(--warm-gold);
+  border-radius: var(--radius-sm);
+}
+
+/* Entrepreneurial Intro Statement */
+.entrepreneurial-intro {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+}
+
+.intro-statement {
+  font-family: var(--font-mono);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--sky-blue-dark);
+  font-style: italic;
+  margin: 0 auto;
+  max-width: 900px;
+  position: relative;
+  padding: 0 var(--spacing-md);
+}
+
+.intro-statement::before,
+.intro-statement::after {
+  content: '"';
+  font-size: 3rem;
+  color: var(--warm-gold);
+  font-weight: 900;
+  position: relative;
+  top: 10px;
+  opacity: 0.6;
+}
+
+[data-theme="light"] .intro-statement {
+  color: var(--sky-blue-dark);
+}
+
+/* Small Business Owner Section */
+.business-content {
+  position: relative;
+  margin-top: var(--spacing-md);
+}
+
+/* Business Card Float Container - Similar to Photo Float */
+.business-card-float {
+  float: left;
+  margin-right: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.business-card-image {
+  width: 280px;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--pure-black);
+  transition: all var(--transition-normal);
+  background: var(--pure-white);
+  padding: 0.5rem;
+}
+
+.business-card-image:hover {
+  transform: translateY(-5px) rotate(-2deg);
+  box-shadow: 0 12px 24px rgba(74, 144, 226, 0.4);
+  border-color: var(--sky-blue-medium);
+}
+
+/* Use .badge-outline and .badge-pulse from common.css */
+.coming-soon-badge {
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Business Text Content */
+.business-text {
+  overflow: visible;
+}
+
+/* Use .card-title and .card-subtitle from common.css */
+.business-title {
+  font-size: 1.5rem;
+}
+
+.business-text p {
+  text-align: justify;
+}
+
+/* Use .text-content from common.css */
+
+/* Full-width text below floated image */
+.business-text-full {
+  clear: both;
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
+.business-text-full p {
+  text-align: justify;
+}
+
+/* Use .text-content from common.css */
+
+.business-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+/* Use .btn-blueprint and .btn-blueprint-disabled from common.css */
+/* Use .badge-pulse-white from common.css */
+
+/* Clearfix for float */
+.business-content::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 /* Music Badges */
 .music-badges {
   display: flex;
@@ -219,21 +771,7 @@
   margin-top: var(--spacing-md);
 }
 
-.badge {
-  background: var(--sky-blue-dark);
-  color: var(--pure-white);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-fast);
-}
-
-.badge:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-}
+/* Use .badge from common.css */
 
 /* Achievements Grid */
 .about-achievements {
@@ -259,8 +797,8 @@
   border-color: var(--warm-gold);
 }
 
+/* Use .icon-lg from common.css */
 .achievement-icon {
-  font-size: 3rem;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -293,54 +831,425 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .about-photo {
-    width: 180px;
+  .photo-drop-container {
     margin-left: var(--spacing-sm);
   }
 
+  .about-photo {
+    width: 180px;
+  }
+
   .education-timeline {
-    padding-top: 4rem;
+    padding: var(--spacing-md) 0;
+  }
+
+  /* Hide horizontal timeline elements at 768px */
+  .timeline-chart {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Hide the year labels (start/end) */
+  .year-label {
+    display: none;
+  }
+
+  /* Hide the horizontal timeline track */
+  .timeline-track {
+    display: none;
+  }
+
+  /* Show the grid layout at 768px */
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* Style timeline cards for grid */
+  .timeline-card {
+    position: relative;
+    background-color: var(--cream);
+    border: 3px solid var(--sky-blue-medium);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    padding-top: calc(var(--spacing-md) + 2.5rem);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: default;
+    min-height: 180px;
+  }
+
+  .timeline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--warm-gold);
+  }
+
+  /* Show content directly (not as tooltip) */
+  .timeline-card::after {
+    content: attr(data-tooltip);
+    display: block;
+    color: var(--pure-black);
+    margin-top: var(--spacing-sm);
+    font-size: 0.95rem;
+    white-space: pre-line;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Year badge at top left for cards */
+  .timeline-card .dot-year {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    background-color: var(--sky-blue-medium);
+    color: var(--pure-white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Icon centered at top for cards */
+  .timeline-card .dot-icon {
+    font-size: 3rem;
+    margin: 0 auto var(--spacing-sm);
+    display: block;
+    text-align: center;
+    filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.2));
+  }
+
+
+  .github-contributions {
+    padding: var(--spacing-md);
+  }
+
+  .contributions-tagline {
+    font-size: 1rem;
+  }
+
+  .github-link {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .about-photo {
+  .about-section {
+    padding: var(--spacing-lg) 5%;
+  }
+
+  .about-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .photo-drop-container {
     float: none;
     display: block;
+    margin: 0 auto var(--spacing-md);
+  }
+
+  .about-photo {
     width: 100%;
     max-width: 280px;
-    margin: 0 auto var(--spacing-md);
+    opacity: 1;
+    transform: none;
+  }
+
+  .photo-drop-container.animate .about-photo {
+    animation: none;
+  }
+
+  .cursor-animation {
+    display: none;
+  }
+
+  .photo-drop-container.animate .cursor-animation {
+    animation: none;
   }
 
   .about-text-with-image p {
     text-align: left;
   }
 
+  /* Hide horizontal timeline elements on mobile */
+  .timeline-axis {
+    display: block;
+  }
+
   .timeline-track {
-    height: 60px;
+    display: none;
   }
 
-  .dot-icon {
-    font-size: 1.5rem;
+  .year-label {
+    display: none;
   }
 
-  .dot-year {
-    font-size: 0.7rem;
+  /* Show card-based timeline on mobile */
+  .education-timeline {
+    padding: var(--spacing-md) 0;
   }
 
-  .timeline-dot::after {
-    font-size: 0.7rem;
-    max-width: 180px;
-    padding: 0.5rem 0.75rem;
+  .timeline-chart {
+    display: block;
+    max-width: 100%;
   }
 
+  .timeline-axis {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    padding: 0;
+  }
+
+  /* Create timeline cards */
+  .timeline-dot {
+    position: relative;
+    left: auto !important;
+    top: auto;
+    transform: none;
+    display: block;
+    background-color: var(--cream);
+    border: 3px solid var(--sky-blue-medium);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    padding-top: calc(var(--spacing-md) + 2rem);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: default;
+  }
+
+  .timeline-dot:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--warm-gold);
+  }
+
+  /* Remove dot circle on mobile */
   .timeline-dot::before {
-    width: 12px;
-    height: 12px;
-    border-width: 2px;
+    display: none;
+  }
+
+  /* Show content directly (not as tooltip) */
+  .timeline-dot::after {
+    content: attr(data-tooltip);
+    position: static;
+    transform: none;
+    background-color: transparent;
+    color: var(--pure-black);
+    padding: 0;
+    margin-top: var(--spacing-sm);
+    border-radius: 0;
+    font-size: 0.95rem;
+    white-space: pre-line;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: none;
+    font-family: inherit;
+    width: auto;
+    text-align: left;
+    line-height: 1.6;
+    display: block;
+  }
+
+  /* Year badge at top left */
+  .dot-year {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    background-color: var(--sky-blue-medium);
+    color: var(--pure-white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Icon centered at top */
+  .dot-icon {
+    font-size: 3rem;
+    margin: 0 auto var(--spacing-sm);
+    display: block;
+    text-align: center;
+    filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.2));
   }
 
   .achievement-icon {
     font-size: 2.5rem;
+  }
+
+  .contributions-tagline {
+    font-size: 0.9rem;
+  }
+
+  .contribution-chart {
+    min-width: 500px;
+  }
+
+  .github-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .link-arrow {
+    display: none;
+  }
+
+  .github-stats-wrapper {
+    padding: 0;
+  }
+
+  .stat-card-blueprint {
+    float: none;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+    min-width: 240px;
+    max-width: 280px;
+    padding: 1.5rem;
+  }
+
+  .stat-description {
+    overflow: visible;
+  }
+
+  .stat-description p {
+    text-align: left;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .stat-icon {
+    font-size: 3rem;
+  }
+
+  .github-view-button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .contributions-graph-embedded {
+    padding: var(--spacing-sm);
+  }
+
+  .contribution-chart-embedded {
+    min-width: 500px;
+  }
+
+  .graffiti-text {
+    gap: 4rem;
+  }
+
+  .graffiti-line {
+    font-size: clamp(4rem, 15vw, 8rem);
+    -webkit-text-stroke: 2px var(--sky-blue-medium);
+    text-stroke: 2px var(--sky-blue-medium);
+  }
+
+  [data-theme="light"] .graffiti-line {
+    -webkit-text-stroke: 1.5px var(--sky-blue-dark);
+    text-stroke: 1.5px var(--sky-blue-dark);
+  }
+
+  .wip-section {
+    padding: var(--spacing-md);
+  }
+
+  .cursor-tooltip {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .cursor-line {
+    font-size: 1.2em;
+  }
+
+  .wip-note {
+    font-size: 0.85rem;
+  }
+
+  /* Entrepreneurial Intro */
+  .entrepreneurial-intro {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+  }
+
+  .intro-statement {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    padding: 0 var(--spacing-sm);
+  }
+
+  .intro-statement::before,
+  .intro-statement::after {
+    font-size: 2rem;
+    top: 5px;
+  }
+
+  /* Business Owner Section */
+  .business-card-float {
+    float: none;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .business-card-image {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .coming-soon-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .business-title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .business-subtitle {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .business-text p {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .business-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .business-link-button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .business-link-button-disabled {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.2rem;
   }
 }
