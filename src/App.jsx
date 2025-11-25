@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
+import ArchitectureShowcase from './components/ArchitectureShowcase';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Resume from './components/Resume';
@@ -11,6 +13,7 @@ import './App.css';
 
 function App() {
   const [theme, setTheme] = useState('dark');
+  const [showLoading, setShowLoading] = useState(true);
 
   // Load theme from localStorage on mount
   useEffect(() => {
@@ -27,11 +30,21 @@ function App() {
     localStorage.setItem('theme', newTheme);
   };
 
+  // Handle loading screen completion
+  const handleLoadingComplete = () => {
+    setShowLoading(false);
+  };
+
+  // Show loading screen on first visit
+  if (showLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
+
   return (
     <div className="App">
       {/* Accessibility Skip Link */}
       <a href="#main-content" className="skip-link">
-        Skip to main content
+        Skip to main content.
       </a>
 
       {/* Navigation */}
@@ -50,6 +63,9 @@ function App() {
 
         {/* The Discography (Projects) */}
         <Projects />
+
+        {/* The Blueprint (Architecture) */}
+        <ArchitectureShowcase />
 
         {/* The Resume */}
         <Resume />
