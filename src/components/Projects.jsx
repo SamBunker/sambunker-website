@@ -1,6 +1,10 @@
+import { useState } from 'react';
 import './Projects.css';
 
 const Projects = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentPreviewUrl, setCurrentPreviewUrl] = useState('');
+
   const projects = [
     {
       title: 'Harper and Lyre',
@@ -9,8 +13,9 @@ const Projects = () => {
       description: 'A professional interactive website for an upcoming indie game studio, optimized for speed, accessibility, and SEO. Validated through Lighthouse with a 99 Performance score.',
       tech: ['React', 'Node.js', 'Handlebars', 'Express'],
       achievements: ['⚡ 99 Performance', '🎯 95+ All Categories', '🚀 Optimized SEO'],
-      liveUrl: '#',
-      githubUrl: '#'
+      liveUrl: 'https://www.harperandlyre.com',
+      previewUrl: 'https://www.harperandlyre.com',
+      githubUrl: 'https://github.com/SamBunker/harperandlyre-website'
     },
     {
       title: 'AfterDark Quotes',
@@ -19,8 +24,9 @@ const Projects = () => {
       description: 'A scalable content management system with role-based access control, data analytics, and automated deployment infrastructure.',
       tech: ['Express', 'MySQL', 'Handlebars', 'Analytics'],
       achievements: ['📊 Real-time Analytics', '🔒 Role-Based Access', '📱 Mobile-First'],
-      liveUrl: '#',
-      githubUrl: '#'
+      liveUrl: 'https://quotes.sambunker.com',
+      previewUrl: 'https://quotes.sambunker.com',
+      githubUrl: 'https://github.com/SamBunker/afterdark-quotes-website'
     },
     {
       title: 'Code Bunker',
@@ -30,7 +36,7 @@ const Projects = () => {
       tech: ['PHP', 'MySQL', 'JSON APIs', 'XAMPP'],
       achievements: ['🔐 Custom Auth', '📋 Project Tracking', '🌐 Web APIs'],
       liveUrl: '#',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/SamBunker/code-bunker'
     },
     {
       title: 'Tap Me In',
@@ -40,6 +46,7 @@ const Projects = () => {
       tech: ['E-commerce', 'Marketing', 'Web Management'],
       achievements: ['💼 Small Business', '📱 NFC Tech', '💰 Sales'],
       liveUrl: 'https://www.tapmein.online',
+      previewUrl: 'https://www.tapmein.online',
       githubUrl: null
     },
     {
@@ -75,8 +82,69 @@ const Projects = () => {
     return badges[status] || badges.gold;
   };
 
+  const openPreview = (url) => {
+    setCurrentPreviewUrl(url);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+    setCurrentPreviewUrl('');
+  };
+
   return (
     <section id="discography" className="projects-section section rap-sheet">
+      {/* Vinyl Record Decorations */}
+      <div className="vinyl-records" aria-hidden="true">
+        {/* Left Vinyl - Higher on page */}
+        <div className="vinyl-left">
+          <svg viewBox="0 0 200 200" className="vinyl-svg">
+            {/* Outer edge */}
+            <circle cx="100" cy="100" r="95" fill="#1a1a1a" stroke="#333" strokeWidth="2"/>
+            {/* Grooves */}
+            <circle cx="100" cy="100" r="85" fill="none" stroke="#2a2a2a" strokeWidth="1" opacity="0.7"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#2a2a2a" strokeWidth="1" opacity="0.7"/>
+            <circle cx="100" cy="100" r="65" fill="none" stroke="#2a2a2a" strokeWidth="1" opacity="0.7"/>
+            <circle cx="100" cy="100" r="55" fill="none" stroke="#2a2a2a" strokeWidth="1" opacity="0.7"/>
+            {/* Label */}
+            <circle cx="100" cy="100" r="40" fill="#4A90E2"/>
+            <circle cx="100" cy="100" r="35" fill="none" stroke="#2E5C8A" strokeWidth="1"/>
+            {/* Text - Top Line */}
+            <text x="100" y="95" fill="#FFFFFF" fontSize="9" fontWeight="700" fontFamily="Arial, sans-serif" textAnchor="middle">
+              HARPER AND
+            </text>
+            {/* Text - Bottom Line */}
+            <text x="100" y="108" fill="#FFFFFF" fontSize="9" fontWeight="700" fontFamily="Arial, sans-serif" textAnchor="middle">
+              LYRE
+            </text>
+            {/* Center hole */}
+            <circle cx="100" cy="100" r="8" fill="#0a0a0a"/>
+            {/* Shine effect */}
+            <path d="M 60 60 Q 100 80 140 60" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+          </svg>
+        </div>
+
+        {/* Right Vinyl - Lower on page */}
+        <div className="vinyl-right">
+          <svg viewBox="0 0 200 200" className="vinyl-svg">
+            {/* Outer edge */}
+            <circle cx="100" cy="100" r="95" fill="#1a1a1a" stroke="#333" strokeWidth="2"/>
+            {/* Grooves */}
+            <circle cx="100" cy="100" r="85" fill="none" stroke="#2a2a2a" strokeWidth="1" opacity="0.7"/>
+            <circle cx="100" cy="100" r="75" fill="none" stroke="#2a2a2a" strokeWidth="1" opacity="0.7"/>
+            <circle cx="100" cy="100" r="65" fill="none" stroke="#2a2a2a" strokeWidth="1" opacity="0.7"/>
+            <circle cx="100" cy="100" r="55" fill="none" stroke="#2a2a2a" strokeWidth="1" opacity="0.7"/>
+            {/* Label */}
+            <circle cx="100" cy="100" r="40" fill="#FFA834"/>
+            <circle cx="100" cy="100" r="35" fill="none" stroke="#CC8629" strokeWidth="1"/>
+            {/* Center hole */}
+            <circle cx="100" cy="100" r="8" fill="#0a0a0a"/>
+            {/* Shine effect */}
+            <path d="M 60 140 Q 100 120 140 140" fill="none" stroke="rgba(255,255,255,0.1)" strokeWidth="2"/>
+          </svg>
+        </div>
+      </div>
+
       <div className="container">
         <h2 className="section-title">// THE DISCOGRAPHY \\</h2>
         <p className="section-subtitle">"Projects Dropped Like Albums"</p>
@@ -98,7 +166,7 @@ const Projects = () => {
             return (
               <div key={index} className={`project-card ${badge.class}`}>
                 <div className="project-status-badge">
-                  <span className="badge-icon">{badge.icon}</span>
+                  <span className="badge-icon icon-xs">{badge.icon}</span>
                   <span className="badge-label">{badge.label}</span>
                 </div>
 
@@ -122,7 +190,14 @@ const Projects = () => {
                 </div>
 
                 <div className="project-links">
-                  {project.liveUrl && (
+                  {project.previewUrl ? (
+                    <button
+                      onClick={() => openPreview(project.previewUrl)}
+                      className="project-link live"
+                    >
+                      ▶ Play Live
+                    </button>
+                  ) : project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
@@ -160,6 +235,23 @@ const Projects = () => {
           </a>
         </div>
       </div>
+
+      {/* Preview Modal */}
+      {modalOpen && (
+        <div className="preview-modal" onClick={closeModal}>
+          <div className="preview-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="preview-modal-close" onClick={closeModal}>
+              ✕
+            </button>
+            <iframe
+              src={currentPreviewUrl}
+              className="preview-iframe"
+              title="Project Preview"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -5,9 +5,79 @@
 
 .projects-section {
   padding: var(--spacing-xl) var(--spacing-md);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Projects Grid */
+/* Vinyl Record Decorations */
+.vinyl-records {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vinyl-left,
+.vinyl-right {
+  position: absolute;
+  opacity: 0.15;
+  filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+[data-theme="light"] .vinyl-left,
+[data-theme="light"] .vinyl-right {
+  opacity: 0.6;
+}
+
+.vinyl-left {
+  left: -80px;
+  top: 100px;
+  width: 30rem;
+  height: 30rem;
+  animation: vinylRotateLeft 30s linear infinite;
+}
+
+.vinyl-right {
+  right: -80px;
+  bottom: 150px;
+  width: 30rem;
+  height: 30rem;
+  animation: vinylRotateRight 35s linear infinite reverse;
+}
+
+@keyframes vinylRotateLeft {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes vinylRotateRight {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.vinyl-svg {
+  width: 100%;
+  height: 100%;
+  filter: blur(0.5px);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Projects Grid - Use .card-grid from common.css with custom minmax */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -25,6 +95,8 @@
   transition: all var(--transition-normal);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card::before {
@@ -37,6 +109,7 @@
   background: linear-gradient(90deg, var(--sky-blue-medium), var(--warm-gold));
 }
 
+/* Use .card-hover from common.css - custom transform preserved */
 .project-card:hover {
   transform: translateY(-8px) scale(1.02);
   box-shadow: var(--shadow-lg);
@@ -122,6 +195,7 @@
   background: linear-gradient(135deg, #9B59B6, #E91E63);
 }
 
+/* Use .icon-xs from common.css (1.1rem) */
 .badge-icon {
   font-size: 1.1rem;
 }
@@ -151,7 +225,7 @@
   font-style: italic;
 }
 
-/* Description */
+/* Description - Custom styling (slightly smaller than .text-content) */
 .project-description {
   font-size: 0.95rem;
   line-height: 1.6;
@@ -167,6 +241,7 @@
   margin-bottom: var(--spacing-sm);
 }
 
+/* Similar to .badge from common.css but with custom colors/sizing */
 .tech-tag {
   background-color: rgba(74, 144, 226, 0.1);
   color: var(--sky-blue-dark);
@@ -200,6 +275,7 @@
   flex-wrap: wrap;
   padding-top: var(--spacing-sm);
   border-top: 1px solid var(--light-gray);
+  margin-top: auto;
 }
 
 .project-link {
@@ -213,6 +289,10 @@
   transition: all var(--transition-fast);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .project-link.live {
@@ -259,6 +339,20 @@
   .project-link {
     width: 100%;
   }
+
+  .vinyl-left {
+    width: 180px;
+    height: 180px;
+    left: -60px;
+    top: 50px;
+  }
+
+  .vinyl-right {
+    width: 200px;
+    height: 200px;
+    right: -70px;
+    bottom: 100px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -276,5 +370,144 @@
 
   .badge-icon {
     font-size: 1.3rem;
+  }
+
+  .vinyl-left {
+    width: 140px;
+    height: 140px;
+    left: -50px;
+    opacity: 0.1;
+  }
+
+  .vinyl-right {
+    width: 150px;
+    height: 150px;
+    right: -60px;
+    opacity: 0.1;
+  }
+}
+
+/* ============================================
+   DARK MODE OVERRIDES
+   ============================================ */
+
+[data-theme="dark"] .project-title {
+  color: #87CEEB;
+}
+
+[data-theme="dark"] .project-subtitle {
+  color: #D3D3D3;
+}
+
+[data-theme="dark"] .project-description {
+  color: #FFFFFF;
+}
+
+[data-theme="dark"] .tech-tag {
+  color: #87CEEB;
+  background-color: rgba(135, 206, 235, 0.15);
+}
+
+[data-theme="dark"] .achievement-badge {
+  color: #FFFFFF;
+  border-left-color: #FFA834;
+}
+
+/* ============================================
+   PREVIEW MODAL
+   ============================================ */
+
+.preview-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.preview-modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 1400px;
+  height: 85vh;
+  background-color: var(--pure-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.preview-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background-color: var(--pure-black);
+  color: var(--pure-white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.preview-modal-close:hover {
+  background-color: var(--warm-gold);
+  transform: rotate(90deg);
+}
+
+.preview-iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .preview-modal-content {
+    width: 95%;
+    height: 80vh;
+  }
+
+  .preview-modal-close {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+    top: 0.5rem;
+    right: 0.5rem;
   }
 }
