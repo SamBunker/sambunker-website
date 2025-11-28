@@ -433,8 +433,8 @@ const ArchitectureShowcase = () => {
         <h2 className="section-title">// THE BUNK-BOX \\</h2>
         <p className="section-subtitle">"Pick a Tape to See How It Works"</p>
         <p className="section-description">
-          Click on any cassette to see the technical architecture and tech stack for that project.
-          Each blueprint shows how the frontend, backend, APIs, and databases work together.
+          Click on any cassette to see the tech blueprint and stack for that project.
+          Each diagram shows how the frontend, backend, APIs, and databases connect.
         </p>
 
         {/* Boom Box */}

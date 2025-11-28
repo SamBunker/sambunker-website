@@ -64,7 +64,7 @@ function App() {
         {/* The Discography (Projects) */}
         <Projects />
 
-        {/* The Blueprint (Architecture) */}
+        {/* The Bunk-Box (Project Blueprints) */}
         <ArchitectureShowcase />
 
         {/* The Resume */}

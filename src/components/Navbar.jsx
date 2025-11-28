@@ -39,6 +39,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           <li><button onClick={() => scrollToSection('story')} className="nav-link">THE STORY</button></li>
           <li><button onClick={() => scrollToSection('arsenal')} className="nav-link">THE ARSENAL</button></li>
           <li><button onClick={() => scrollToSection('discography')} className="nav-link">THE WORKS</button></li>
+          <li><button onClick={() => scrollToSection('architecture')} className="nav-link">BUNK-BOX</button></li>
           <li><button onClick={() => scrollToSection('resume')} className="nav-link">RESUME</button></li>
           <li><button onClick={() => scrollToSection('contact')} className="nav-link">CONTACT</button></li>
           <li>
