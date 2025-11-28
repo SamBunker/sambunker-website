@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import './Contact.css';
 
 const Contact = () => {
+  const [phoneRevealed, setPhoneRevealed] = useState(false);
+
   return (
     <section id="contact" className="contact-section section rap-sheet">
       <div className="container">
@@ -22,8 +25,7 @@ const Contact = () => {
           <div className="contact-info">
             <h3 className="contact-heading">GET IN TOUCH</h3>
             <p className="contact-text text-content">
-              Whether you need a full-stack developer, a UI/UX designer, or someone who brings
-              both technical skills and creative vision—let's talk.
+              Need a developer who can handle the full stack and make things look good? Let's build something together.
             </p>
 
             <div className="contact-details">
@@ -35,13 +37,26 @@ const Contact = () => {
                 </div>
               </a>
 
-              <a href="tel:+17174466875" className="contact-item">
-                <span className="contact-icon icon-sm">📱</span>
-                <div className="contact-item-text">
-                  <strong>Phone</strong>
-                  <span>(717) 446-6875</span>
-                </div>
-              </a>
+              {phoneRevealed ? (
+                <a href="tel:+17174466875" className="contact-item">
+                  <span className="contact-icon icon-sm">📱</span>
+                  <div className="contact-item-text">
+                    <strong>Phone</strong>
+                    <span>(717) 446-6875</span>
+                  </div>
+                </a>
+              ) : (
+                <button
+                  onClick={() => setPhoneRevealed(true)}
+                  className="contact-item contact-item-reveal"
+                >
+                  <span className="contact-icon icon-sm">📱</span>
+                  <div className="contact-item-text">
+                    <strong>Phone</strong>
+                    <span className="reveal-text">Click to reveal number</span>
+                  </div>
+                </button>
+              )}
 
               <a
                 href="https://linkedin.com/in/sambunker/"
@@ -88,9 +103,7 @@ const Contact = () => {
             <div className="cta-card">
               <h3>Open for Opportunities</h3>
               <p>
-                I'm currently available for full-time positions, contract work, and freelance projects.
-                Whether it's building a web application, designing a user interface, or managing
-                a complex project—I'm ready to bring value to your team.
+                Looking for full-time, contract, or freelance opportunities. Need someone to build an app, design an interface, or lead a project? You need me, you need Samuel Bunker.
               </p>
               <div className="cta-buttons">
                 <a href="mailto:samuelbunker@live.com" className="btn btn-primary">

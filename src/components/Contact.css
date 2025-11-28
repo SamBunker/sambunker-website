@@ -91,6 +91,23 @@
   color: var(--pure-black);
 }
 
+/* Phone Reveal Button */
+.contact-item-reveal {
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+}
+
+.contact-item-reveal:hover {
+  background-color: rgba(74, 144, 226, 0.2);
+}
+
+.contact-item-reveal .reveal-text {
+  color: var(--pure-black);
+  font-style: italic;
+}
+
 /* CTA Card */
 .contact-cta {
   display: flex;
@@ -178,7 +195,6 @@
 .social-icon:hover {
   background-color: var(--sky-blue-medium);
   color: var(--pure-white);
-  transform: translateY(-5px) rotate(5deg);
   box-shadow: var(--shadow-lg);
   border-color: var(--warm-gold);
 }
