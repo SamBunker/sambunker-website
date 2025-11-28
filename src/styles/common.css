@@ -47,7 +47,7 @@
     ),
     linear-gradient(to bottom, #fffbd6 0%, #f0eed5 100%);
   max-width: 700px;
-  margin: var(--spacing-md) auto 2rem;
+  margin: var(--spacing-md) auto 4.5rem;
   font-style: normal;
   line-height: 2;
   font-size: 1.6rem;
@@ -99,10 +99,10 @@
     repeating-linear-gradient(
       transparent,
       transparent 31px,
-      rgba(135, 206, 235, 0.2) 31px,
-      rgba(135, 206, 235, 0.2) 32px
+      rgba(0, 0, 0, 0.2) 31px,
+      rgba(0, 0, 0, 0.2) 32px
     ),
-    linear-gradient(to bottom, #F5F5E8 0%, #F0F0E0 100%);
+    linear-gradient(to bottom, #a15e37 0%, #ca7a4b 100%);
 }
 
 [data-theme="dark"] .verse p {
@@ -246,7 +246,7 @@
   .verse p,
   .verse-left p,
   .verse-right p {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -254,7 +254,7 @@
   .verse p,
   .verse-left p,
   .verse-right p {
-    font-size: 0.9rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -535,10 +535,11 @@
 /* Legacy button support */
 .btn-primary {
   background-color: var(--sky-blue-medium);
-  color: #FFFFFF;
+  color: var(--pure-white);
 }
 
 .btn-primary:hover {
+  color: var(--pure-white);
   background-color: var(--sky-blue-dark);
 }
 
