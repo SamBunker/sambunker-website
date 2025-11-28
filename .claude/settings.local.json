@@ -6,7 +6,9 @@
       "Bash(npm run dev:*)",
       "Bash(git diff:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(git rm:*)",
+      "Bash(cp:*)"
     ],
     "deny": [],
     "ask": []

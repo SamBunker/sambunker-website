@@ -5,7 +5,6 @@
 
 .footer {
   background-color: var(--terminal-bg);
-  color: var(--pure-white);
   padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
   font-family: var(--font-mono);
   border-top: 3px solid var(--sky-blue-medium);
@@ -74,10 +73,11 @@
 
 .footer-section li {
   margin-bottom: 0.5rem;
+  color: white;
 }
 
 .footer-section a {
-  color: var(--pure-white);
+  color: white;
   text-decoration: none;
   font-size: 0.9rem;
   transition: all var(--transition-fast);

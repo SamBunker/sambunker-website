@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="footer-brand">
             <h3 className="footer-logo">SAMUEL J. BUNKER</h3>
             <p className="footer-tagline">
-              Full-Stack Developer • Hip-Hop Head • Problem Solver
+              Full-Stack Developer • Problem Solver • Hip-Hop Head
             </p>
           </div>
 
@@ -67,10 +67,10 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-quote">
-            <p>"Built with React, designed with soul, optimized for goals"</p>
+            <p>Built with a whole lot of frickin' love.</p>
           </div>
           <div className="footer-copyright">
-            <p>© {currentYear} Samuel J. Bunker • Boom-bap beats meet clean code sheets</p>
+            <p>© {currentYear} Samuel J. Bunker</p>
           </div>
         </div>
       </div>

@@ -326,7 +326,7 @@ a:focus-visible {
 
 .btn-gold {
   background-color: var(--warm-gold);
-  color: var(--pure-black);
+  color: black;
 }
 
 .btn-gold:hover {

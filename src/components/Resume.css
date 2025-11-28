@@ -135,69 +135,6 @@
   color: var(--sky-blue-medium);
 }
 
-/* Resume Highlights */
-.resume-highlights {
-  margin-top: var(--spacing-xl);
-}
-
-.highlights-title {
-  font-family: var(--font-mono);
-  font-size: 1.5rem;
-  color: var(--sky-blue-dark);
-  text-align: center;
-  margin-bottom: var(--spacing-lg);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-
-/* Use .card-grid from common.css (minmax 280px) - close enough to 250px */
-.highlights-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-md);
-}
-
-.highlight-card {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-md);
-  background-color: var(--pure-white);
-  border: 2px solid var(--sky-blue-medium);
-  border-radius: var(--radius-md);
-  padding: var(--spacing-md);
-  box-shadow: var(--shadow-sm);
-  transition: all var(--transition-normal);
-}
-
-/* Use .card-hover from common.css */
-.highlight-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--warm-gold);
-}
-
-/* Use .icon-md from common.css (2.5rem) */
-.highlight-icon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-}
-
-.highlight-content h4 {
-  font-family: var(--font-mono);
-  font-size: 1.1rem;
-  color: var(--sky-blue-dark);
-  margin: 0 0 0.3rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.highlight-content p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--pure-black);
-  line-height: 1.5;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
   .resume-controls {
@@ -218,10 +155,6 @@
   .pdf-iframe {
     height: 600px;
   }
-
-  .highlights-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 480px) {
@@ -231,15 +164,6 @@
 
   .pdf-iframe {
     height: 500px;
-  }
-
-  .highlight-card {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .highlight-icon {
-    font-size: 2rem;
   }
 
   .resume-intro p {

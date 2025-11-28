@@ -19,9 +19,9 @@ const Resume = () => {
         <div className="resume-content">
           <div className="resume-intro text-content">
             <p>
-              This is where the rubber meets the road—my professional journey documented in black and white.
-              Five years of web development experience, project management expertise, and a proven track record
-              of delivering high-performance solutions.
+              Here's the official rundown of what I've been building. Five years deep in web development,
+              managing projects, and shipping solutions that actually perform. Everything's laid out below,
+              so go ahead and check it out.
             </p>
           </div>
 
@@ -59,40 +59,6 @@ const Resume = () => {
             </div>
           </div>
 
-          {/* Quick Highlights */}
-          <div className="resume-highlights">
-            <h3 className="highlights-title">Quick Hits</h3>
-            <div className="highlights-grid">
-              <div className="highlight-card card-hover">
-                <div className="highlight-icon icon-md">💼</div>
-                <div className="highlight-content">
-                  <h4>5+ Years Experience</h4>
-                  <p>Full-stack web development, from concept to deployment</p>
-                </div>
-              </div>
-              <div className="highlight-card card-hover">
-                <div className="highlight-icon icon-md">🎓</div>
-                <div className="highlight-content">
-                  <h4>IT + CS Education</h4>
-                  <p>BS Information Technology, Minor Computer Science</p>
-                </div>
-              </div>
-              <div className="highlight-card card-hover">
-                <div className="highlight-icon icon-md">🏆</div>
-                <div className="highlight-content">
-                  <h4>Award Winner</h4>
-                  <p>2x First Place Hackathon Champion</p>
-                </div>
-              </div>
-              <div className="highlight-card card-hover">
-                <div className="highlight-icon icon-md">🚀</div>
-                <div className="highlight-content">
-                  <h4>Performance Focus</h4>
-                  <p>Lighthouse scores 95+ across all projects</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
