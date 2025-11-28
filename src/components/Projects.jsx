@@ -10,9 +10,9 @@ const Projects = () => {
       title: 'Harper and Lyre',
       subtitle: 'Professional Gaming Studio Site',
       status: 'platinum',
-      description: 'A professional interactive website for an upcoming indie game studio, optimized for speed, accessibility, and SEO. Validated through Lighthouse with a 99 Performance score.',
-      tech: ['React', 'Node.js', 'Handlebars', 'Express'],
-      achievements: ['⚡ 99 Performance', '🎯 95+ All Categories', '🚀 Optimized SEO'],
+      description: 'A professional interactive website for an upcoming indie game studio. Full-stack development from design to deployment, showcasing their vision with smooth animations and responsive design.',
+      tech: ['Node.js', 'Express', 'Handlebars', 'MySQL'],
+      achievements: ['🎮 Live Client Project', '🎨 Custom Interactive Design', '🚀 Production Deployed'],
       liveUrl: 'https://www.harperandlyre.com',
       previewUrl: 'https://www.harperandlyre.com',
       githubUrl: 'https://github.com/SamBunker/harperandlyre-website'
