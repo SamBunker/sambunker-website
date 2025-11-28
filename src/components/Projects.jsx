@@ -12,7 +12,7 @@ const Projects = () => {
       status: 'platinum',
       description: 'A professional interactive website for an upcoming indie game studio. Full-stack development from design to deployment, showcasing their vision with smooth animations and responsive design.',
       tech: ['Node.js', 'Express', 'Handlebars', 'MySQL'],
-      achievements: ['🎮 Real Gaming Studio Client', '🎨 Custom Interactive Design', '⚡ Optimized Performance'],
+      achievements: ['🎮 Real Gaming Studio Client', '🎨 Custom Interactive Design', '🔧 Ongoing Maintenance'],
       liveUrl: 'https://www.harperandlyre.com',
       previewUrl: 'https://www.harperandlyre.com',
       githubUrl: 'https://github.com/SamBunker/harperandlyre-website'
