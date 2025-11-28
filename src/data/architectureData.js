@@ -1,0 +1,412 @@
+// Project Architecture Data
+// This file contains the node and connection data for each project's architecture visualization
+
+export const projectArchitectures = [
+  {
+    id: 'my-portfolio',
+    name: 'My Portfolio',
+    icon: '💼',
+    description: 'Personal portfolio website showcasing projects and skills',
+    cassetteColor: {
+      primary: '#9B59B6',
+      secondary: '#E91E63',
+      border: '#4A90E2',
+      textColor: '#000000'
+    },
+    nodes: [
+      // Column 1: Web Clients
+      {
+        id: 'user',
+        type: 'user',
+        label: 'Web Clients',
+        x: 100,
+        y: 250,
+        details: 'Browsers accessing the website'
+      },
+
+      {
+        id: 'cloudflare',
+        type: 'external',
+        label: 'Cloudflare',
+        x: 250,
+        y: 250,
+        details: 'CDN, SSL/TLS, DDoS protection',
+        connections: ['DNS', 'SSL Certificate', 'CDN Caching']
+      },
+
+      // Column 3: Network Layer
+      {
+        id: 'router',
+        type: 'infrastructure',
+        label: 'Router',
+        x: 400,
+        y: 250,
+        details: 'Home network router with port forwarding',
+        port: '80 → 443'
+      },
+
+      // Column 4: Reverse Proxy
+      {
+        id: 'nginx',
+        type: 'service',
+        label: 'NGINX',
+        x: 550,
+        y: 250,
+        details: 'Reverse proxy server',
+        port: '80/443',
+        config: 'Handles SSL termination and routing'
+      },
+
+      // Column 5: Container Orchestration
+      {
+        id: 'docker',
+        type: 'infrastructure',
+        label: 'Docker Stack',
+        x: 700,
+        y: 250,
+        details: 'Docker Compose stack for portfolio',
+        image: 'portfolio:latest'
+      },
+
+      // Column 6: Application Container
+      {
+        id: 'app',
+        type: 'application',
+        label: 'React + Vite',
+        x: 850,
+        y: 250,
+        port: '80',
+        details: 'React application built with Vite, served via NGINX',
+        tech: 'React 19, Vite, CSS3'
+      },
+
+      // Top Row: Management & CI/CD
+      {
+        id: 'raspberry-pi-portfolio',
+        type: 'infrastructure',
+        label: 'Raspberry Pi',
+        x: 850,
+        y: 100,
+        details: 'Home server running on local network',
+        hardware: 'Raspberry Pi 4'
+      },
+      {
+        id: 'portainer',
+        type: 'service',
+        label: 'Portainer',
+        x: 700,
+        y: 100,
+        details: 'Docker container management UI on Raspberry Pi',
+        port: '9000'
+      },
+      {
+        id: 'github',
+        type: 'cicd',
+        label: 'GitHub',
+        x: 400,
+        y: 100,
+        details: 'Source code repository',
+        repo: 'github.com/sambunker/sambunker-website'
+      },
+      {
+        id: 'github-actions',
+        type: 'cicd',
+        label: 'GitHub Actions',
+        x: 550,
+        y: 100,
+        details: 'CI/CD pipeline for automated deployments',
+        workflow: 'Build → Test → Deploy'
+      },
+      {
+        id: 'local-runner',
+        type: 'cicd',
+        label: 'Self-Hosted Runner',
+        x: 700,
+        y: 30,
+        details: 'Local machine running GitHub Actions workflows',
+        os: 'Linux'
+      }
+    ],
+    connections: [
+      { from: 'user', to: 'cloudflare', type: 'https', label: 'HTTPS Request' },
+      { from: 'cloudflare', to: 'router', type: 'https', label: 'Proxied Request' },
+      { from: 'router', to: 'nginx', type: 'http', label: 'Port Forward' },
+      { from: 'nginx', to: 'docker', type: 'proxy', label: 'Reverse Proxy' },
+      { from: 'docker', to: 'app', type: 'container', label: 'Docker Network' },
+      { from: 'raspberry-pi-portfolio', to: 'portainer', type: 'service', label: 'Hosts' },
+      { from: 'portainer', to: 'docker', type: 'management', label: 'GitOps Deployment' },
+      { from: 'github', to: 'github-actions', type: 'trigger', label: 'Push Event' },
+      { from: 'github-actions', to: 'local-runner', type: 'dispatch', label: 'Job Assignment' },
+      { from: 'local-runner', to: 'portainer', type: 'webhook', label: 'Webhook Trigger' },
+      { from: 'portainer', to: 'docker', type: 'rebuild', label: 'Pull & Redeploy Stack' }
+    ]
+  },
+  {
+    id: 'afterdark-quotes-bot',
+    name: 'AfterDark Quotes Discord Bot',
+    icon: '🤖',
+    description: 'Automated Discord bot for quote collection',
+    cassetteColor: {
+      primary: '#5865F2',
+      secondary: '#7289DA',
+      border: '#FFFFFF',
+      textColor: '#000000'
+    },
+    nodes: [
+      // Column 1: External Service
+      {
+        id: 'discord',
+        type: 'external',
+        label: 'Discord',
+        x: 100,
+        y: 250,
+        details: 'Discord server and channels',
+        channel: '#quotes'
+      },
+
+      // Column 2: Container
+      {
+        id: 'docker-bot',
+        type: 'infrastructure',
+        label: 'Docker',
+        x: 250,
+        y: 250,
+        details: 'Containerized bot environment',
+        image: 'afterdark-bot:latest'
+      },
+
+      // Column 3: Bot Application
+      {
+        id: 'bot',
+        type: 'application',
+        label: 'Discord Bot',
+        x: 400,
+        y: 250,
+        port: '',
+        details: 'Python Discord bot application',
+        tech: 'Discord.py'
+      },
+
+      // Column 4: Database
+      {
+        id: 'dynamodb-bot',
+        type: 'database',
+        label: 'DynamoDB',
+        x: 550,
+        y: 250,
+        details: 'Stores collected quotes',
+        tables: ['Auth', 'Quotes', 'Ratings', 'Limbo-Quotes']
+      },
+
+      // Top Row: Management & CI/CD
+      {
+        id: 'raspberry-pi-bot',
+        type: 'infrastructure',
+        label: 'Raspberry Pi',
+        x: 400,
+        y: 100,
+        details: 'Home server running on local network',
+        hardware: 'Raspberry Pi 4'
+      },
+      {
+        id: 'portainer-bot',
+        type: 'service',
+        label: 'Portainer',
+        x: 250,
+        y: 100,
+        details: 'Docker container management UI on Raspberry Pi',
+        port: '9000'
+      },
+      {
+        id: 'github-repo-bot',
+        type: 'cicd',
+        label: 'GitHub',
+        x: 100,
+        y: 100,
+        details: 'Source code repository',
+        repo: 'github.com/sambunker/afterdark-bot'
+      },
+      {
+        id: 'github-actions-bot',
+        type: 'cicd',
+        label: 'GitHub Actions',
+        x: 250,
+        y: 30,
+        details: 'CI/CD pipeline for automated deployments',
+        workflow: 'Build → Test → Deploy'
+      },
+      {
+        id: 'local-runner-bot',
+        type: 'cicd',
+        label: 'Self-Hosted Runner',
+        x: 400,
+        y: 30,
+        details: 'Local machine running GitHub Actions workflows',
+        os: 'Linux'
+      }
+    ],
+    connections: [
+      { from: 'discord', to: 'docker-bot', type: 'bidirectional', label: 'WebSocket' },
+      { from: 'docker-bot', to: 'bot', type: 'container', label: 'Docker Network' },
+      { from: 'bot', to: 'dynamodb-bot', type: 'bidirectional', label: 'AWS SDK' },
+      { from: 'raspberry-pi-bot', to: 'portainer-bot', type: 'service', label: 'Hosts' },
+      { from: 'portainer-bot', to: 'docker-bot', type: 'management', label: 'Container Mgmt' },
+      { from: 'github-repo-bot', to: 'github-actions-bot', type: 'trigger', label: 'Push Event' },
+      { from: 'github-actions-bot', to: 'local-runner-bot', type: 'dispatch', label: 'Job Assignment' },
+      { from: 'local-runner-bot', to: 'portainer-bot', type: 'webhook', label: 'Webhook API' },
+      { from: 'portainer-bot', to: 'docker-bot', type: 'rebuild', label: 'Pull & Restart' }
+    ]
+  },
+  {
+    id: 'code-bunker',
+    name: 'Code Bunker',
+    icon: '📦',
+    description: 'Enterprise project management system',
+    cassetteColor: {
+      primary: '#FFA834',
+      secondary: '#FFD700',
+      border: '#4A90E2',
+      textColor: '#000000'
+    },
+    nodes: [
+      // Column 1: Web Clients
+      {
+        id: 'user',
+        type: 'user',
+        label: 'Web Clients',
+        x: 100,
+        y: 250,
+        details: 'Browsers accessing the application'
+      },
+
+      {
+        id: 'cloudflare',
+        type: 'external',
+        label: 'Cloudflare',
+        x: 250,
+        y: 250,
+        details: 'CDN, SSL/TLS, DDoS protection',
+        connections: ['DNS', 'SSL Certificate', 'CDN Caching']
+      },
+
+      // Column 3: Network Layer
+      {
+        id: 'router',
+        type: 'infrastructure',
+        label: 'Router',
+        x: 400,
+        y: 250,
+        details: 'Home network router with port forwarding',
+        port: '80 → 443'
+      },
+
+      // Column 4: Reverse Proxy
+      {
+        id: 'nginx',
+        type: 'service',
+        label: 'NGINX',
+        x: 550,
+        y: 250,
+        details: 'Reverse proxy server',
+        port: '80/443',
+        config: 'Handles SSL termination and routing'
+      },
+
+      // Column 5: Container Orchestration
+      {
+        id: 'docker',
+        type: 'infrastructure',
+        label: 'Docker Stack',
+        x: 700,
+        y: 250,
+        details: 'Docker Compose stack with app and database',
+        image: 'code-bunker:latest'
+      },
+
+      // Column 6: Application Container
+      {
+        id: 'app',
+        type: 'application',
+        label: 'PHP App',
+        x: 850,
+        y: 200,
+        port: '80',
+        details: 'PHP 8.x with Apache in container',
+        tech: 'PHP, Bootstrap 5, Chart.js, PDO'
+      },
+
+      // Bottom Row: Database Container
+      {
+        id: 'mysql',
+        type: 'database',
+        label: 'MySQL',
+        x: 850,
+        y: 350,
+        details: 'MySQL container with persistent volumes',
+        tables: ['Projects', 'Tasks', 'Users', 'Notes', 'Activity Log']
+      },
+
+      // Top Row: Management & CI/CD
+      {
+        id: 'raspberry-pi',
+        type: 'infrastructure',
+        label: 'Raspberry Pi',
+        x: 850,
+        y: 100,
+        details: 'Home server running on local network',
+        hardware: 'Raspberry Pi 4'
+      },
+      {
+        id: 'portainer',
+        type: 'service',
+        label: 'Portainer',
+        x: 700,
+        y: 100,
+        details: 'Docker container management UI on Raspberry Pi',
+        port: '9000'
+      },
+      {
+        id: 'github',
+        type: 'cicd',
+        label: 'GitHub',
+        x: 400,
+        y: 100,
+        details: 'Source code repository',
+        repo: 'github.com/sambunker/code-bunker'
+      },
+      {
+        id: 'github-actions',
+        type: 'cicd',
+        label: 'GitHub Actions',
+        x: 550,
+        y: 100,
+        details: 'CI/CD pipeline for automated deployments',
+        workflow: 'Build → Test → Deploy'
+      },
+      {
+        id: 'local-runner',
+        type: 'cicd',
+        label: 'Self-Hosted Runner',
+        x: 700,
+        y: 30,
+        details: 'Local machine running GitHub Actions workflows',
+        os: 'Linux'
+      }
+    ],
+    connections: [
+      { from: 'user', to: 'cloudflare', type: 'https', label: 'HTTPS Request' },
+      { from: 'cloudflare', to: 'router', type: 'https', label: 'Proxied Request' },
+      { from: 'router', to: 'nginx', type: 'http', label: 'Port Forward' },
+      { from: 'nginx', to: 'docker', type: 'proxy', label: 'Reverse Proxy' },
+      { from: 'docker', to: 'app', type: 'container', label: 'Docker Network' },
+      { from: 'docker', to: 'mysql', type: 'container', label: 'Docker Network' },
+      { from: 'app', to: 'mysql', type: 'bidirectional', label: 'PDO Connection' },
+      { from: 'raspberry-pi', to: 'portainer', type: 'service', label: 'Hosts' },
+      { from: 'portainer', to: 'docker', type: 'management', label: 'GitOps Deployment' },
+      { from: 'github', to: 'github-actions', type: 'trigger', label: 'Push Event' },
+      { from: 'github-actions', to: 'local-runner', type: 'dispatch', label: 'Job Assignment' },
+      { from: 'local-runner', to: 'portainer', type: 'webhook', label: 'Webhook Trigger' },
+      { from: 'portainer', to: 'docker', type: 'rebuild', label: 'Pull & Redeploy Stack' }
+    ]
+  }
+];
