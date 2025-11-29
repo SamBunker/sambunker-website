@@ -1,4 +1,4 @@
-import './Hero.css';
+import '../styles/Hero.css';
 import meImage from '../assets/images/me.webp';
 
 const Hero = () => {

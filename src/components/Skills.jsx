@@ -1,4 +1,4 @@
-import './Skills.css';
+import '../styles/Skills.css';
 
 const Skills = () => {
   const skills = {

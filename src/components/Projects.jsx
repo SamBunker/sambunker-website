@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Projects.css';
+import '../styles/Projects.css';
 
 const Projects = () => {
   const [modalOpen, setModalOpen] = useState(false);

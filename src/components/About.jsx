@@ -1,4 +1,4 @@
-import './About.css';
+import '../styles/About.css';
 import { useState, useEffect, useRef } from 'react';
 import youngSamuelImage from '../assets/images/young-samuel-and-david.webp';
 import aboutImage from '../assets/images/home.webp';
@@ -6,6 +6,9 @@ import aboutImage from '../assets/images/home.webp';
 const About = () => {
   const photoRef = useRef(null);
   const [hasAnimated, setHasAnimated] = useState(false);
+  const graffitiLine1Ref = useRef(null);
+  const graffitiLine2Ref = useRef(null);
+  const graffitiLine3Ref = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -32,17 +35,48 @@ const About = () => {
     };
   }, [hasAnimated]);
 
+  // Graffiti bar fade-out effect
+  useEffect(() => {
+    const graffitiObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Add fade-out class after 2 seconds
+            setTimeout(() => {
+              entry.target.classList.add('bar-fade-out');
+            }, 1000);
+            graffitiObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const refs = [graffitiLine1Ref, graffitiLine2Ref, graffitiLine3Ref];
+    refs.forEach(ref => {
+      if (ref.current) {
+        graffitiObserver.observe(ref.current);
+      }
+    });
+
+    return () => {
+      refs.forEach(ref => {
+        if (ref.current) {
+          graffitiObserver.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
+
   return (
     <section id="story" className="about-section section rap-sheet">
-      {/* Graffiti Background Text */}
       <div className="graffiti-text" aria-hidden="true">
-        <span className="graffiti-line">BUILD</span>
-        <span className="graffiti-line">BELIEVE</span>
-        <span className="graffiti-line">BECOME</span>
+        <span className="graffiti-line" ref={graffitiLine1Ref}>BUILD <span className="solid-bar">████████████</span></span>
+        <span className="graffiti-line" ref={graffitiLine2Ref}><span className="solid-bar">████████████</span> BELIEVE</span>
+        <span className="graffiti-line" ref={graffitiLine3Ref}>BECOME <span className="solid-bar">████████████</span></span>
       </div>
 
       <div className="container">
-        {/* Home Photo at Top */}
         <div className="about-hero-image">
           <img src={aboutImage} alt="Samuel's Home" className="home-photo" />
         </div>
@@ -50,7 +84,6 @@ const About = () => {
         <h2 className="section-title">// THE STORY \\</h2>
         <p className="section-subtitle">"Back to My Roots"</p>
 
-        {/* Bar 1 - Tech Side */}
         <div className="about-content">
           <div className="verse">
             <p>
@@ -66,7 +99,6 @@ const About = () => {
 
             <div className="about-grid">
               <div className="about-text-with-image text-content">
-                {/* Photo with Drag & Drop Cursor Animation */}
                 <div className="photo-drop-container" ref={photoRef}>
                   <div className="cursor-animation" aria-hidden="true">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="animated-cursor">
@@ -89,82 +121,6 @@ const About = () => {
             </div>
           </div>
 
-          {/* <div className="about-text-section">
-            <h3 className="subsection-title">THE MUSIC</h3>
-            <div className="about-grid">
-              <div className="about-text">
-                <p>
-                  When I'm not coding, you'll catch me with my headphones, vibing to the greats:
-                  <strong> Eminem, J-Cole, Joyner Lucas, Ice Cube, D12</strong>. That boom-bap snare + bass
-                  HITS DIFFERENT.
-                </p>
-                <p>
-                  I freestyle, I love the gangster-rap vibe, the raw authenticity, the lyrical wordplay.
-                  Hip-hop taught me about rhythm, flow, and storytelling—skills that translate directly into
-                  how I approach problem-solving in code.
-                </p>
-              </div>
-            </div>
-          </div> */}
-
-          {/* Bar 3 - The Blend */}
-          {/* <div className="verse">
-            <p>
-              "Code bars and lyrical scars, that's my <span className="highlight-yellow">repertoire</span>,<br />
-              From React components to verses I <span className="highlight-yellow">record</span>,<br />
-              Portfolio site that breaks the corporate <span className="highlight-orange">mold</span>,<br />
-              Street-smart aesthetic but the skills are <span className="highlight-orange">gold</span>."
-            </p>
-          </div>
-
-          <div className="about-text-section">
-            <h3 className="subsection-title">THE BLEND</h3>
-            <div className="about-grid">
-              <div className="about-text">
-                <p>
-                  Why not combine both? This portfolio isn't your typical resume site. It's rap sheets meets
-                  code sheets. It's bold, it's authentic, it's ME.
-                </p>
-                <p>
-                  Just like a rapper crafts bars with precision, I write clean, maintainable code.
-                  Just like hip-hop values authenticity, I bring genuine passion to every project.
-                  Let's build something that stands out.
-                </p>
-              </div>
-            </div>
-          </div> */}
-
-          {/* Education & Achievements */}
-          {/* <div className="about-achievements">
-            <div className="achievement-card">
-              <div className="achievement-icon">🎓</div>
-              <h4>Education</h4>
-              <p><strong>Juniata College</strong></p>
-              <p>BS in Information Technology</p>
-              <p>Minor in Computer Science</p>
-              <p className="year">May 2024</p>
-            </div>
-
-            <div className="achievement-card">
-              <div className="achievement-icon">🎨</div>
-              <h4>Design Cert</h4>
-              <p><strong>Franklin County CTC</strong></p>
-              <p>Graphic Communications</p>
-              <p>Certificate</p>
-              <p className="year">January 2020</p>
-            </div>
-
-            <div className="achievement-card">
-              <div className="achievement-icon">🏆</div>
-              <h4>Hackathons</h4>
-              <p><strong>2x First Place Winner</strong></p>
-              <p>Juniata Hackathon 2023</p>
-              <p>Juniata Hackathon 2022</p>
-              <p className="year">React & UI/UX</p>
-            </div>
-          </div> */}
-
-          {/* Entrepreneurial Drive Section */}
           <div className="about-text-section">
             <div className="entrepreneurial-intro">
               <p className="intro-statement">
@@ -174,11 +130,9 @@ const About = () => {
             </div>
           </div>
 
-          {/* Small Business Owner Section */}
           <div className="about-text-section">
             <h3 className="subsection-title">💼 SMALL BUSINESS OWNER</h3>
             <div className="business-content">
-              {/* Business Card Image - Floats Left */}
               <div className="business-card-float">
                 <img
                   src="/img/tapmein.png"
@@ -187,7 +141,6 @@ const About = () => {
                 />
               </div>
 
-              {/* Text Content - Wraps Around Card */}
               <div className="business-text text-content">
                 <h4 className="business-title card-title">Tap Me In</h4>
                 <p className="business-subtitle card-subtitle">NFC Business Cards</p>
@@ -199,7 +152,6 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Full-width content below image */}
               <div className="business-text-full text-content">
                 <p>
                   Leading <strong>Tap Me In</strong> from concept to execution, I oversee product design,

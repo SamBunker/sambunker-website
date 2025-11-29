@@ -1,4 +1,4 @@
-import './Footer.css';
+import '../styles/Footer.css';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,10 +8,7 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-main">
           <div className="footer-brand">
-            <h3 className="footer-logo">SAMUEL J. BUNKER</h3>
-            <p className="footer-tagline">
-              Full-Stack Developer • Problem Solver • Hip-Hop Head
-            </p>
+            <img src="/img/logo-white.webp" alt="Samuel J. Bunker Logo" className="footer-logo" />
           </div>
 
           <div className="footer-links">
@@ -67,6 +64,7 @@ const Footer = () => {
 
         <div className="footer-bottom">
           <div className="footer-quote">
+            <p>Full-Stack Developer • Problem Solver • Hip-Hop Head</p>
             <p>Built with a whole lot of frickin' love.</p>
           </div>
           <div className="footer-copyright">

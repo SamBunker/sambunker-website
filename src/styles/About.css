@@ -1,0 +1,1273 @@
+/* ============================================
+   ABOUT SECTION - "The Story"
+   Rap Sheet Styling with Notebook Aesthetic
+   ============================================ */
+
+.about-section {
+  padding: var(--spacing-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Graffiti Background Text */
+.graffiti-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  user-select: none;
+}
+
+[data-theme="light"] .graffiti-text {
+  opacity: 0.06;
+}
+
+.graffiti-line {
+  position: absolute;
+  font-family: 'Impact', 'Arial Black', sans-serif;
+  font-size: clamp(15rem, 8vw, 6rem);
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: transparent;
+  -webkit-text-stroke: 3px var(--sky-blue-medium);
+  text-stroke: 3px var(--sky-blue-medium);
+  animation: graffiti-float 20s ease-in-out infinite;
+  transform-origin: left center;
+  left: 2%;
+}
+
+.graffiti-line .solid-bar {
+  letter-spacing: 0;
+  color: var(--sky-blue-medium);
+  -webkit-text-stroke: 0;
+  text-stroke: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+[data-theme="light"] .graffiti-line .solid-bar {
+  color: var(--sky-blue-dark);
+}
+
+/* Fade out animation for solid bars */
+.graffiti-line.bar-fade-out .solid-bar {
+  opacity: 0;
+}
+
+.graffiti-line:nth-child(1) {
+  top: 20%;
+  left: 2%;
+}
+
+.graffiti-line:nth-child(2) {
+  top: 40%;
+  left: auto;
+  right: 2%;
+}
+
+.graffiti-line:nth-child(3) {
+  top: 60%;
+  left: 2%;
+}
+
+
+[data-theme="light"] .graffiti-line {
+  -webkit-text-stroke: 2px var(--sky-blue-dark);
+  text-stroke: 2px var(--sky-blue-dark);
+}
+
+/* Home Photo at Top */
+.about-hero-image {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.home-photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 500px;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Text Sections */
+.about-text-section {
+  margin: var(--spacing-lg) 0;
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+/* Use .text-content from common.css for paragraph styling */
+
+/* About Photo with Text Wrapping */
+.about-text-with-image {
+  position: relative;
+}
+
+/* Photo Drop Container with Cursor Animation */
+.photo-drop-container {
+  float: right;
+  position: relative;
+  margin-left: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.cursor-animation {
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.animated-cursor {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Only animate when .animate class is added */
+.photo-drop-container.animate .cursor-animation {
+  animation: cursorDragDrop 2.5s ease-in-out forwards;
+}
+
+@keyframes cursorDragDrop {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(140px, 140px);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(140px, 140px) scale(0.9);
+  }
+  70% {
+    opacity: 0;
+    transform: translate(140px, 140px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(140px, 140px);
+  }
+}
+
+.about-photo {
+  width: 250px;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  /* border: 3px solid var(--sky-blue-medium); */
+  transition: all var(--transition-normal);
+  /* Fallback to visible in case animation doesn't trigger */
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Animate when .animate class is added - override base visible state */
+.photo-drop-container:not(.animate) .about-photo {
+  /* Hide photo until animation triggers, but only on larger screens */
+  opacity: 0;
+  transform: translate(-140px, -140px) scale(0.3);
+}
+
+.photo-drop-container.animate .about-photo {
+  animation: photoDrop 2.5s ease-in-out forwards;
+}
+
+@keyframes photoDrop {
+  0% {
+    opacity: 0;
+    transform: translate(-140px, -140px) scale(0.3);
+  }
+  10% {
+    opacity: 0.3;
+    transform: translate(-140px, -140px) scale(0.3);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(0, 0) scale(0.95);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.about-photo:hover {
+  transform: translateY(-5px) rotate(2deg);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.about-text-with-image p {
+  text-align: justify;
+}
+
+/* Use .text-content from common.css for paragraph styling */
+
+/* Education Timeline Chart */
+.education-timeline {
+  padding: var(--spacing-md) 0 6rem;
+  position: relative;
+}
+
+.timeline-chart {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* Hide grid by default (only show on mobile) */
+.timeline-grid {
+  display: none;
+}
+
+.year-label {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sky-blue-dark);
+  flex-shrink: 0;
+}
+
+.timeline-track {
+  position: relative;
+  flex: 1;
+  height: 80px;
+  background: linear-gradient(
+    to right,
+    var(--sky-blue-medium) 0%,
+    var(--sky-blue-medium) 100%
+  );
+  background-size: 100% 3px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Timeline dot on the line */
+.timeline-dot {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.timeline-dot:hover {
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* Dot circle */
+.timeline-dot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: var(--sky-blue-medium);
+  border: 3px solid var(--pure-white);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(74, 144, 226, 0.4);
+  z-index: 1;
+}
+
+[data-theme="light"] .timeline-dot::before {
+  border-color: var(--cream);
+}
+
+.timeline-dot:hover::before {
+  background-color: var(--warm-gold);
+  box-shadow: 0 4px 12px rgba(255, 168, 52, 0.6);
+}
+
+/* Icon above the dot */
+.dot-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  transition: filter var(--transition-fast);
+  z-index: 2;
+}
+
+.timeline-dot:hover .dot-icon {
+  filter: drop-shadow(4px 4px 8px rgba(74, 144, 226, 0.6));
+}
+
+/* Year below the dot */
+.dot-year {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sky-blue-dark);
+  margin-top: 1.5rem;
+  white-space: nowrap;
+}
+
+/* Tooltip - appears below the timeline */
+.timeline-dot::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100%);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--terminal-bg);
+  color: var(--pure-white);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  white-space: pre-line;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal), transform var(--transition-normal);
+  z-index: 1000;
+  box-shadow: var(--shadow-lg);
+  font-family: var(--font-mono);
+  width: 320px;
+  text-align: center;
+  line-height: 1.4;
+}
+
+[data-theme="light"] .timeline-dot::after {
+  background-color: var(--sky-blue-dark);
+  color: var(--pure-white);
+}
+
+.timeline-dot:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(5px);
+}
+
+/* GitHub Contribution Graph */
+.github-contributions {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: var(--pure-white);
+  border: 3px solid var(--sky-blue-medium);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.contributions-header {
+  text-align: center;
+  margin-bottom: var(--spacing-md);
+}
+
+.contributions-tagline {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--sky-blue-dark);
+  margin: 0;
+}
+
+.contributions-graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.contribution-chart {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+
+.contributions-footer {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 2px solid var(--sky-blue-light);
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sky-blue-dark);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(74, 144, 226, 0.1);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.github-link:hover {
+  background-color: var(--sky-blue-medium);
+  color: var(--pure-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.link-arrow {
+  font-size: 1.3rem;
+  transition: transform var(--transition-fast);
+}
+
+.github-link:hover .link-arrow {
+  transform: translateX(5px);
+}
+
+/* GitHub Stats Container - Blueprint Style with Text Wrap */
+.github-stats-wrapper {
+  position: relative;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  overflow: visible;
+  padding: 4px 0 4px 4px;
+}
+
+.github-stats-wrapper::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.stat-card-blueprint {
+  float: left;
+  background: var(--cream);
+  border: 3px solid var(--pure-black);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  min-width: 280px;
+  max-width: 320px;
+  margin-right: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.stat-card-blueprint:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(74, 144, 226, 0.4);
+  border-color: var(--sky-blue-medium);
+}
+
+/* Use .icon-xl from common.css */
+.stat-icon {
+  margin-bottom: var(--spacing-md);
+}
+
+.stat-card-blueprint h4 {
+  font-family: var(--font-mono);
+  color: var(--pure-black);
+  font-size: 1.1rem;
+  margin: 0 0 var(--spacing-md);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--sky-blue-medium);
+  margin: var(--spacing-sm) 0;
+  line-height: 1;
+  text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: var(--sky-blue-dark);
+  margin: var(--spacing-sm) 0 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-description {
+  overflow: visible;
+  padding-bottom: var(--spacing-sm);
+}
+
+.stat-description p {
+  text-align: justify;
+}
+
+/* Use .text-content from common.css */
+
+/* Use .btn-blueprint from common.css for buttons */
+.github-view-button {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Embedded Contribution Graph */
+.contributions-graph-embedded {
+  width: 100%;
+  margin-top: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background: var(--cream);
+  border: 3px solid var(--pure-black);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  clear: both;
+}
+
+.contribution-chart-embedded {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Work in Progress Section */
+.wip-section {
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-lg);
+  background-color: rgba(74, 144, 226, 0.03);
+  border: 2px dashed var(--sky-blue-medium);
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+[data-theme="light"] .wip-section {
+  background-color: rgba(74, 144, 226, 0.05);
+}
+
+.wip-header {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Use .badge from common.css */
+
+.editable-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--pure-black);
+}
+
+.editable-text p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Google Docs-style Live Cursor */
+.live-cursor {
+  position: relative;
+  display: inline-block;
+  margin-left: 0.2em;
+}
+
+.cursor-tooltip {
+  position: absolute;
+  /* bottom: 100%; */
+  left: 10px;
+  background-color: var(--sky-blue-dark);
+  color: var(--pure-white);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-bottom: 5px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  pointer-events: none;
+  font-family: var(--font-mono);
+}
+
+/* .cursor-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 15px;
+  border: 5px solid transparent;
+  border-top-color: var(--sky-blue-dark);
+} */
+
+.cursor-line {
+  display: inline-block;
+  color: var(--sky-blue-dark);
+  font-weight: 900;
+  font-size: 1.3em;
+  line-height: 1;
+  animation: blink 1s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.wip-note {
+  font-size: 0.95rem;
+  color: var(--medium-gray);
+  font-style: italic;
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background-color: rgba(255, 168, 52, 0.08);
+  border-left: 3px solid var(--warm-gold);
+  border-radius: var(--radius-sm);
+}
+
+/* Entrepreneurial Intro Statement */
+.entrepreneurial-intro {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+}
+
+.intro-statement {
+  font-family: var(--font-mono);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--sky-blue-dark);
+  font-style: italic;
+  margin: 0 auto;
+  max-width: 900px;
+  position: relative;
+  padding: 0 var(--spacing-md);
+}
+
+.intro-statement::before,
+.intro-statement::after {
+  content: '"';
+  font-size: 3rem;
+  color: var(--warm-gold);
+  font-weight: 900;
+  position: relative;
+  top: 10px;
+  opacity: 0.6;
+}
+
+[data-theme="light"] .intro-statement {
+  color: var(--sky-blue-dark);
+}
+
+/* Small Business Owner Section */
+.business-content {
+  position: relative;
+  margin-top: var(--spacing-md);
+}
+
+/* Business Card Float Container - Similar to Photo Float */
+.business-card-float {
+  float: left;
+  margin-right: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.business-card-image {
+  width: 280px;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--pure-black);
+  transition: all var(--transition-normal);
+  background: var(--pure-white);
+  padding: 0.5rem;
+}
+
+.business-card-image:hover {
+  transform: translateY(-5px) rotate(-2deg);
+  box-shadow: 0 12px 24px rgba(74, 144, 226, 0.4);
+  border-color: var(--sky-blue-medium);
+}
+
+/* Use .badge-outline and .badge-pulse from common.css */
+.coming-soon-badge {
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* Business Text Content */
+.business-text {
+  overflow: visible;
+}
+
+/* Use .card-title and .card-subtitle from common.css */
+.business-title {
+  font-size: 1.5rem;
+}
+
+.business-text p {
+  text-align: justify;
+}
+
+/* Use .text-content from common.css */
+
+/* Full-width text below floated image */
+.business-text-full {
+  clear: both;
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
+.business-text-full p {
+  text-align: justify;
+}
+
+/* Use .text-content from common.css */
+
+.business-buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+/* Use .btn-blueprint and .btn-blueprint-disabled from common.css */
+/* Use .badge-pulse-white from common.css */
+
+/* Clearfix for float */
+.business-content::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* Music Badges */
+.music-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: var(--spacing-md);
+}
+
+/* Use .badge from common.css */
+
+/* Achievements Grid */
+.about-achievements {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-xl);
+}
+
+.achievement-card {
+  background-color: var(--pure-white);
+  border: 2px solid var(--sky-blue-medium);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  text-align: center;
+  box-shadow: var(--shadow-paper);
+  transition: all var(--transition-normal);
+}
+
+.achievement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--warm-gold);
+}
+
+/* Use .icon-lg from common.css */
+.achievement-icon {
+  margin-bottom: var(--spacing-sm);
+}
+
+.achievement-card h4 {
+  font-family: var(--font-mono);
+  color: var(--sky-blue-dark);
+  font-size: 1.2rem;
+  margin-bottom: var(--spacing-xs);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.achievement-card p {
+  margin: 0.25rem 0;
+  font-size: 0.95rem;
+  color: var(--pure-black);
+}
+
+.achievement-card p strong {
+  color: var(--sky-blue-dark);
+  font-weight: 600;
+}
+
+.achievement-card .year {
+  margin-top: var(--spacing-xs);
+  font-size: 0.85rem;
+  color: var(--medium-gray);
+  font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+  .photo-drop-container {
+    margin-left: var(--spacing-sm);
+  }
+
+  .about-photo {
+    width: 180px;
+  }
+
+  .education-timeline {
+    padding: var(--spacing-md) 0;
+  }
+
+  /* Hide horizontal timeline elements at 768px */
+  .timeline-chart {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Hide the year labels (start/end) */
+  .year-label {
+    display: none;
+  }
+
+  /* Hide the horizontal timeline track */
+  .timeline-track {
+    display: none;
+  }
+
+  /* Show the grid layout at 768px */
+  .timeline-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* Style timeline cards for grid */
+  .timeline-card {
+    position: relative;
+    background-color: var(--cream);
+    border: 3px solid var(--sky-blue-medium);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    padding-top: calc(var(--spacing-md) + 2.5rem);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: default;
+    min-height: 180px;
+  }
+
+  .timeline-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--warm-gold);
+  }
+
+  /* Show content directly (not as tooltip) */
+  .timeline-card::after {
+    content: attr(data-tooltip);
+    display: block;
+    color: var(--pure-black);
+    margin-top: var(--spacing-sm);
+    font-size: 0.95rem;
+    white-space: pre-line;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* Year badge at top left for cards */
+  .timeline-card .dot-year {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    background-color: var(--sky-blue-medium);
+    color: var(--pure-white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Icon centered at top for cards */
+  .timeline-card .dot-icon {
+    font-size: 3rem;
+    margin: 0 auto var(--spacing-sm);
+    display: block;
+    text-align: center;
+    filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.2));
+  }
+
+
+  .github-contributions {
+    padding: var(--spacing-md);
+  }
+
+  .contributions-tagline {
+    font-size: 1rem;
+  }
+
+  .github-link {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: var(--spacing-lg) 5%;
+  }
+
+  .about-content {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .photo-drop-container {
+    float: none;
+    display: block;
+    margin: 0 auto var(--spacing-md);
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 280px;
+    opacity: 1;
+    transform: none;
+  }
+
+  .photo-drop-container.animate .about-photo {
+    animation: none;
+  }
+
+  .cursor-animation {
+    display: none;
+  }
+
+  .photo-drop-container.animate .cursor-animation {
+    animation: none;
+  }
+
+  .about-text-with-image p {
+    text-align: left;
+  }
+
+  /* Hide horizontal timeline elements on mobile */
+  .timeline-axis {
+    display: block;
+  }
+
+  .timeline-track {
+    display: none;
+  }
+
+  .year-label {
+    display: none;
+  }
+
+  /* Show card-based timeline on mobile */
+  .education-timeline {
+    padding: var(--spacing-md) 0;
+  }
+
+  .timeline-chart {
+    display: block;
+    max-width: 100%;
+  }
+
+  .timeline-axis {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    padding: 0;
+  }
+
+  /* Create timeline cards */
+  .timeline-dot {
+    position: relative;
+    left: auto !important;
+    top: auto;
+    transform: none;
+    display: block;
+    background-color: var(--cream);
+    border: 3px solid var(--sky-blue-medium);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    padding-top: calc(var(--spacing-md) + 2rem);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    cursor: default;
+  }
+
+  .timeline-dot:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--warm-gold);
+  }
+
+  /* Remove dot circle on mobile */
+  .timeline-dot::before {
+    display: none;
+  }
+
+  /* Show content directly (not as tooltip) */
+  .timeline-dot::after {
+    content: attr(data-tooltip);
+    position: static;
+    transform: none;
+    background-color: transparent;
+    color: var(--pure-black);
+    padding: 0;
+    margin-top: var(--spacing-sm);
+    border-radius: 0;
+    font-size: 0.95rem;
+    white-space: pre-line;
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: none;
+    font-family: inherit;
+    width: auto;
+    text-align: left;
+    line-height: 1.6;
+    display: block;
+  }
+
+  /* Year badge at top left */
+  .dot-year {
+    position: absolute;
+    top: var(--spacing-sm);
+    left: var(--spacing-sm);
+    background-color: var(--sky-blue-medium);
+    color: var(--pure-white);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    white-space: nowrap;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Icon centered at top */
+  .dot-icon {
+    font-size: 3rem;
+    margin: 0 auto var(--spacing-sm);
+    display: block;
+    text-align: center;
+    filter: drop-shadow(3px 3px 0 rgba(0, 0, 0, 0.2));
+  }
+
+  .achievement-icon {
+    font-size: 2.5rem;
+  }
+
+  .contributions-tagline {
+    font-size: 0.9rem;
+  }
+
+  .contribution-chart {
+    min-width: 500px;
+  }
+
+  .github-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .link-arrow {
+    display: none;
+  }
+
+  .github-stats-wrapper {
+    padding: 0;
+  }
+
+  .stat-card-blueprint {
+    float: none;
+    margin: 0 auto var(--spacing-md);
+    display: block;
+    min-width: 240px;
+    max-width: 280px;
+    padding: 1.5rem;
+  }
+
+  .stat-description {
+    overflow: visible;
+  }
+
+  .stat-description p {
+    text-align: left;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .stat-icon {
+    font-size: 3rem;
+  }
+
+  .github-view-button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .contributions-graph-embedded {
+    padding: var(--spacing-sm);
+  }
+
+  .contribution-chart-embedded {
+    min-width: 500px;
+  }
+
+  .graffiti-text {
+    gap: 4rem;
+  }
+
+  .graffiti-line {
+    font-size: clamp(4rem, 15vw, 8rem);
+    -webkit-text-stroke: 2px var(--sky-blue-medium);
+    text-stroke: 2px var(--sky-blue-medium);
+  }
+
+  [data-theme="light"] .graffiti-line {
+    -webkit-text-stroke: 1.5px var(--sky-blue-dark);
+    text-stroke: 1.5px var(--sky-blue-dark);
+  }
+
+  .wip-section {
+    padding: var(--spacing-md);
+  }
+
+  .cursor-tooltip {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .cursor-line {
+    font-size: 1.2em;
+  }
+
+  .wip-note {
+    font-size: 0.85rem;
+  }
+
+  /* Entrepreneurial Intro */
+  .entrepreneurial-intro {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
+  }
+
+  .intro-statement {
+    font-size: clamp(1.1rem, 4vw, 1.4rem);
+    padding: 0 var(--spacing-sm);
+  }
+
+  .intro-statement::before,
+  .intro-statement::after {
+    font-size: 2rem;
+    top: 5px;
+  }
+
+  /* Business Owner Section */
+  .business-card-float {
+    float: none;
+    margin: 0 auto var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .business-card-image {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .coming-soon-badge {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.7rem;
+  }
+
+  .business-title {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+
+  .business-subtitle {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  .business-text p {
+    text-align: left;
+    font-size: 1rem;
+  }
+
+  .business-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .business-link-button {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .business-link-button-disabled {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 0.7rem 1.2rem;
+  }
+}

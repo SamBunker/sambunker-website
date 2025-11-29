@@ -1,0 +1,172 @@
+/* ============================================
+   RESUME SECTION - "The Official Document"
+   Professional styling with PDF embed
+   ============================================ */
+
+.resume-section {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background-color: var(--cream);
+}
+
+.resume-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Resume Intro - Use .text-content from common.css */
+.resume-intro {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.resume-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--pure-black);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Resume Viewer */
+.resume-viewer {
+  margin-bottom: var(--spacing-xl);
+  background-color: var(--pure-white);
+  border: 3px solid var(--sky-blue-medium);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Controls */
+.resume-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-bottom: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+/* Use .btn-blueprint and .btn-outline from common.css - Custom gradients preserved */
+.download-btn,
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-sm);
+}
+
+.download-btn {
+  background: linear-gradient(135deg, var(--sky-blue-medium), var(--sky-blue-dark));
+  color: var(--pure-white);
+  border: none;
+}
+
+.download-btn:hover {
+  background: linear-gradient(135deg, var(--sky-blue-dark), var(--pure-black));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.view-btn {
+  background-color: var(--pure-white);
+  color: var(--sky-blue-dark);
+  border: 2px solid var(--sky-blue-medium);
+}
+
+.view-btn:hover {
+  background-color: var(--sky-blue-light);
+  border-color: var(--sky-blue-dark);
+  color: var(--pure-black);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* PDF Container */
+.pdf-container {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  background-color: var(--light-gray);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.pdf-iframe {
+  width: 100%;
+  height: 800px;
+  border: none;
+  border-radius: var(--radius-md);
+}
+
+.pdf-fallback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+}
+
+.pdf-fallback p {
+  font-size: 1.1rem;
+  color: var(--medium-gray);
+}
+
+.pdf-fallback a {
+  color: var(--sky-blue-dark);
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.pdf-fallback a:hover {
+  color: var(--sky-blue-medium);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .resume-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .download-btn,
+  .view-btn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .pdf-container {
+    min-height: 600px;
+  }
+
+  .pdf-iframe {
+    height: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pdf-container {
+    min-height: 500px;
+  }
+
+  .pdf-iframe {
+    height: 500px;
+  }
+
+  .resume-intro p {
+    font-size: 1rem;
+  }
+}

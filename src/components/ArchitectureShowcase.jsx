@@ -1,4 +1,4 @@
-import './ArchitectureShowcase.css';
+import '../styles/ArchitectureShowcase.css';
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { projectArchitectures } from '../data/architectureData';
