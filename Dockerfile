@@ -1,5 +1,5 @@
 # Step 1: Build stage - Build the React app with Vite
-FROM node:18-slim AS builder
+FROM node:20-alpine AS builder
 
 # Step 2: Set the working directory inside the container
 WORKDIR /usr/src/app
@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Step 7: Production stage - Serve the built app with Node.js
-FROM node:18-slim
+FROM node:20-alpine
 
 # Step 8: Set the working directory
 WORKDIR /usr/src/app
@@ -29,7 +29,7 @@ RUN npm install -g serve
 COPY --from=builder /usr/src/app/dist ./dist
 
 # Step 11: Expose the port that the app will run on
-EXPOSE 3000
+EXPOSE 3001
 
-# Step 12: Serve the static files
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# Step 12: Serve the static files on port 3001
+CMD ["serve", "-s", "dist", "-l", "3001"]

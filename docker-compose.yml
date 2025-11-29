@@ -1,80 +1,18 @@
 version: '3.8'
 
 services:
-  # PostgreSQL for Plausible
-  plausible_db:
-    image: postgres:14-alpine
-    restart: unless-stopped
-    container_name: plausible_db
-    volumes:
-      - plausible-db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=plausible
-    networks:
-      - plausible-network
-
-  # ClickHouse for Plausible Events
-  plausible_events_db:
-    image: clickhouse/clickhouse-server:23.3.7.5-alpine
-    restart: unless-stopped
-    container_name: plausible_events_db
-    volumes:
-      - plausible-event-data:/var/lib/clickhouse
-    ulimits:
-      nofile:
-        soft: 262144
-        hard: 262144
-    networks:
-      - plausible-network
-
-  # Plausible Analytics
-  plausible:
-    image: plausible/analytics:v2.0
-    restart: unless-stopped
-    container_name: plausible
-    command: sh -c "sleep 10 && /entrypoint.sh db createdb && /entrypoint.sh db migrate && /entrypoint.sh run"
-    depends_on:
-      - plausible_db
-      - plausible_events_db
-    ports:
-      - "${PLAUSIBLE_PORT:-8000}:8000"
-    environment:
-      - BASE_URL=${BASE_URL}
-      - SECRET_KEY_BASE=${SECRET_KEY_BASE}
-      - DATABASE_URL=postgres://postgres:${POSTGRES_PASSWORD}@plausible_db:5432/plausible
-      - CLICKHOUSE_DATABASE_URL=http://plausible_events_db:8123/plausible_events_db
-      - DISABLE_REGISTRATION=${DISABLE_REGISTRATION:-true}
-      - MAILER_EMAIL=${MAILER_EMAIL}
-    networks:
-      - plausible-network
-    logging:
-      driver: syslog
-      options:
-        syslog-address: "udp://${LOGGING_IP}:1514"
-        tag: "plausible-analytics"
-
   # Samuel Bunker Portfolio Website
   sambunker-portfolio:
     build: .
     restart: unless-stopped
     container_name: sambunker-portfolio
     ports:
-      - "${PORTFOLIO_PORT:-3000}:3000"
+      - "${INTERNAL_PORT}:3001"
     environment:
       - NODE_ENV=production
+      - PORT=3001
     logging:
       driver: syslog
       options:
         syslog-address: "udp://${LOGGING_IP}:1514"
         tag: "sambunker-portfolio"
-
-volumes:
-  plausible-db-data:
-    driver: local
-  plausible-event-data:
-    driver: local
-
-networks:
-  plausible-network:
-    driver: bridge
