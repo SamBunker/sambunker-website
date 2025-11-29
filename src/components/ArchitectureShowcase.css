@@ -565,8 +565,24 @@
 .boom-box-speakers {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   gap: var(--spacing-lg);
   margin-top: var(--spacing-md);
+}
+
+/* Logo Between Speakers */
+.boom-box-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm);
+}
+
+.boombox-logo-img {
+  width: 80px;
+  height: auto;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+  opacity: 0.9;
 }
 
 .speaker {

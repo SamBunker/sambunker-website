@@ -125,6 +125,12 @@ const BoomBox = ({ selectedProject, isPlaying, onEject, onViewBlueprint }) => {
           </div>
           {isPlaying && <div className="sound-wave left">)))</div>}
         </div>
+
+        {/* Logo Label */}
+        <div className="boom-box-logo">
+          <img src="/img/logo-white.webp" alt="SB" className="boombox-logo-img" />
+        </div>
+
         <div className="speaker right-speaker">
           <div className="speaker-grille">
             <div className="speaker-cone"></div>
