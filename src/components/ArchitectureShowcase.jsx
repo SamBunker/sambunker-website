@@ -123,7 +123,8 @@ const BoomBox = ({ selectedProject, isPlaying, onEject, onViewBlueprint }) => {
           <div className="speaker-grille">
             <div className="speaker-cone"></div>
           </div>
-          {isPlaying && <div className="sound-wave left">)))</div>}
+          {isPlaying && <div className="sound-wave left">(((</div>}
+          {isPlaying && <div className="sound-wave right">)))</div>}
         </div>
 
         {/* Logo Label */}
@@ -131,10 +132,13 @@ const BoomBox = ({ selectedProject, isPlaying, onEject, onViewBlueprint }) => {
           <img src="/img/logo-white.webp" alt="SB" className="boombox-logo-img" />
         </div>
 
+
+
         <div className="speaker right-speaker">
           <div className="speaker-grille">
             <div className="speaker-cone"></div>
           </div>
+          {isPlaying && <div className="sound-wave left">(((</div>}
           {isPlaying && <div className="sound-wave right">)))</div>}
         </div>
       </div>

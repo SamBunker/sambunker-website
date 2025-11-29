@@ -30,11 +30,11 @@ const Projects = () => {
     },
     {
       title: 'Code Bunker',
-      subtitle: 'Project Management System',
+      subtitle: 'Open-Source PHP-based Project Management System',
       status: 'gold',
       description: 'A comprehensive, enterprise-grade project management system designed to track and manage development projects securely.',
       tech: ['PHP', 'MySQL', 'JSON APIs', 'XAMPP'],
-      achievements: ['🔐 Custom Auth', '📋 Project Tracking', '🌐 Web APIs'],
+      achievements: ['📖 Open Source', '🔐 Custom Auth', '📋 Project Tracking', '🌐 Webhook Support', '❤️ Active Support'],
       liveUrl: '#',
       githubUrl: 'https://github.com/SamBunker/code-bunker'
     },
