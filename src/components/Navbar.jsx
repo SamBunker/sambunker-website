@@ -27,7 +27,7 @@ const Navbar = ({ theme, toggleTheme }) => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <img
-            src={theme === 'light' ? '/img/logo-black.png' : '/img/logo-white.png'}
+            src={theme === 'light' ? '/img/logo.webp' : '/img/logo-white.webp'}
             alt="Samuel Bunker Logo"
             className="logo-image"
           />
