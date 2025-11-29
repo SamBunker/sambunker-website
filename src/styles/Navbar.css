@@ -59,7 +59,7 @@
 }
 
 .nav-link {
-  color: var(--pure-black);
+  color: white;
   font-family: var(--font-mono);
   font-size: 0.9rem;
   font-weight: 500;
