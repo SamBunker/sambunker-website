@@ -11,8 +11,14 @@ services:
     environment:
       - NODE_ENV=production
       - PORT=3001
+    networks:
+      - d-nginx_default
     logging:
       driver: syslog
       options:
         syslog-address: "udp://${LOGGING_IP}:1514"
         tag: "sambunker-portfolio"
+
+networks:
+  d-nginx_default:
+    external: true
