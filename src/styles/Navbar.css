@@ -59,7 +59,7 @@
 }
 
 .nav-link {
-  color: white;
+  color: var(--pure-black);
   font-family: var(--font-mono);
   font-size: 0.9rem;
   font-weight: 500;
@@ -171,6 +171,11 @@
     gap: 2rem;
     transition: right var(--transition-normal);
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.3);
+  }
+
+  [data-theme="light"] .nav-menu {
+    background-color: var(--pure-white);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
   }
 
   .nav-menu.active {
