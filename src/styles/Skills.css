@@ -312,8 +312,12 @@
     grid-template-columns: 1fr;
   }
 
+  .skill-bar-container {
+    height: 1.5rem;
+  }
+
   .skill-bar::after {
-    font-size: 0.65rem;
+    font-size: 1rem;
     right: 5px;
   }
 }

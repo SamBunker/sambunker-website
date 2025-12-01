@@ -1299,6 +1299,15 @@
     height: 38px;
     font-size: 1rem;
   }
+
+  .architecture-modal-overlay {
+    padding: 0px;
+  }
+
+  .lcd-buttons {
+    display: block;
+
+  }
 }
 
 /* Dark Mode */

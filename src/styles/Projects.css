@@ -377,10 +377,6 @@
     font-size: 1.2rem;
   }
 
-  .badge-label {
-    display: none;
-  }
-
   .badge-icon {
     font-size: 1.3rem;
   }
@@ -389,6 +385,7 @@
     width: 140px;
     height: 140px;
     left: -50px;
+    top: 130px;
     opacity: 0.1;
   }
 

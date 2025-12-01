@@ -140,6 +140,10 @@
 }
 
 @media (max-width: 480px) {
+  .footer-brand {
+    align-items: center;
+  }
+  
   .footer-logo {
     width: 120px;
   }
@@ -154,5 +158,9 @@
 
   .footer-copyright p {
     font-size: 0.75rem;
+  }
+
+  .footer-container {
+    text-align: center;
   }
 }

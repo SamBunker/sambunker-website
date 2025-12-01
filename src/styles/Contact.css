@@ -3,10 +3,6 @@
    Final Verse + Contact Info
    ============================================ */
 
-.contact-section {
-  padding: var(--spacing-xl) var(--spacing-md);
-}
-
 /* Contact Content Grid */
 .contact-content {
   display: grid;
