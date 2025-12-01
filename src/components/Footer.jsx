@@ -68,7 +68,7 @@ const Footer = () => {
             <p>Built with a whole lot of frickin' love.</p>
           </div>
           <div className="footer-copyright">
-            <p>© {currentYear} Samuel J. Bunker</p> | Thank you!
+            <p>© {currentYear} Samuel J. Bunker</p>
           </div>
         </div>
       </div>
