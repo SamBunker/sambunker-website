@@ -57,7 +57,7 @@ const Skills = () => {
   return (
     <section id="arsenal" className="skills-section section">
       <div className="container">
-        <h2 className="section-title">// THE ARSENAL \\</h2>
+        <h2 className="section-title">THE ARSENAL</h2>
         <p className="section-subtitle">"Tools of the Trade"</p>
 
         {/* Opening Verse */}

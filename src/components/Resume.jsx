@@ -4,7 +4,7 @@ const Resume = () => {
   return (
     <section id="resume" className="resume-section section">
       <div className="container">
-        <h2 className="section-title">// THE RESUME \\</h2>
+        <h2 className="section-title">THE RESUME</h2>
         <p className="section-subtitle">"The Official Document"</p>
 
         <div className="resume-verse verse">

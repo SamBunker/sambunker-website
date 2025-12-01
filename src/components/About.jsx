@@ -81,7 +81,7 @@ const About = () => {
           <img src={aboutImage} alt="Samuel's Home" className="home-photo" />
         </div>
 
-        <h2 className="section-title">// THE STORY \\</h2>
+        <h2 className="section-title">THE STORY</h2>
         <p className="section-subtitle">"Back to My Roots"</p>
 
         <div className="about-content">

@@ -146,7 +146,7 @@ const Projects = () => {
       </div>
 
       <div className="container">
-        <h2 className="section-title">// THE DISCOGRAPHY \\</h2>
+        <h2 className="section-title">THE DISCOGRAPHY</h2>
         <p className="section-subtitle">"Projects Dropped Like Albums"</p>
 
         {/* Opening Verse */}

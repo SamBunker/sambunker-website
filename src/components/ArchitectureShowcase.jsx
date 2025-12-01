@@ -440,7 +440,7 @@ const ArchitectureShowcase = () => {
   return (
     <section id="architecture" className="architecture-showcase section rap-sheet">
       <div className="container">
-        <h2 className="section-title">// THE BUNK-BOX \\</h2>
+        <h2 className="section-title">THE BUNK-BOX</h2>
         <p className="section-subtitle">"Pick a Tape to See How It Works"</p>
         <p className="section-description">
           Click on any cassette to see the tech blueprint and stack for that project.

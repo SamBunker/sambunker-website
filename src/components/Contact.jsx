@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section id="contact" className="contact-section section rap-sheet">
       <div className="container">
-        <h2 className="section-title">// LET'S CONNECT \\</h2>
+        <h2 className="section-title">LET'S CONNECT</h2>
         <p className="section-subtitle">"Ready to Collaborate"</p>
 
         {/* Final Verse */}
