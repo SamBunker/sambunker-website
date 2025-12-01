@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
   const [showLoading, setShowLoading] = useState(true);
 
   // Load theme from localStorage on mount
