@@ -55,7 +55,6 @@
   letter-spacing: 0.5px;
   position: relative;
   transform: rotate(-1deg);
-  border-left: 4px solid var(--pure-black);
   /* Torn edge effect using clip-path */
   clip-path: polygon(
     0% 2%, 1% 0%, 3% 1%, 5% 0%, 7% 2%, 9% 1%, 11% 0%, 13% 1%,
@@ -102,7 +101,7 @@
       rgba(0, 0, 0, 0.2) 31px,
       rgba(0, 0, 0, 0.2) 32px
     ),
-    linear-gradient(to bottom, #a15e37 0%, #ca7a4b 100%);
+    linear-gradient(to bottom, #fcdcac 0%, #f1de9d 100%);
 }
 
 [data-theme="dark"] .verse p {
