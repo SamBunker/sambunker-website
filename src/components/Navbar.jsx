@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import '../styles/Navbar.css';
 
-const Navbar = ({ theme, toggleTheme }) => {
+const Navbar = ({ theme, toggleTheme, onNavigate }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -15,9 +16,8 @@ const Navbar = ({ theme, toggleTheme }) => {
   }, []);
 
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigate) {
+      onNavigate(id);
       setIsMobileMenuOpen(false);
     }
   };
@@ -66,6 +66,12 @@ const Navbar = ({ theme, toggleTheme }) => {
       </div>
     </nav>
   );
+};
+
+Navbar.propTypes = {
+  theme: PropTypes.string.isRequired,
+  toggleTheme: PropTypes.func.isRequired,
+  onNavigate: PropTypes.func.isRequired
 };
 
 export default Navbar;

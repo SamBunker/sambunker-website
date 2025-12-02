@@ -1,0 +1,208 @@
+/* ============================================
+   PAGE TRANSITION - Cassette Fast Forward
+   ============================================ */
+
+.page-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.15s ease-in, fadeOut 0.15s ease-out 0.45s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.cassette-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Cassette Tape Design */
+.transition-cassette {
+  width: 200px;
+  height: 120px;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+  border: 3px solid var(--sky-blue-medium);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(74, 144, 226, 0.4);
+}
+
+.transition-cassette::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+/* Cassette Reels */
+.cassette-reel {
+  width: 50px;
+  height: 50px;
+  background: #333;
+  border-radius: 50%;
+  border: 2px solid var(--sky-blue-light);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: spinReel 4.5s linear infinite;
+  margin: 10px;
+}
+
+.left-reel {
+  animation-direction: reverse;
+}
+
+@keyframes spinReel {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.reel-inner {
+  width: 40px;
+  height: 40px;
+  background: repeating-conic-gradient(
+    from 0deg,
+    #4A90E2 0deg 30deg,
+    #2E5C8A 30deg 60deg
+  );
+  border-radius: 50%;
+}
+
+.reel-center {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  border: 2px solid var(--sky-blue-medium);
+}
+
+/* Tape Strip Between Reels */
+.cassette-tape-strip {
+  position: absolute;
+  width: 60px;
+  height: 8px;
+  background: linear-gradient(90deg,
+    rgba(139, 69, 19, 0.8) 0%,
+    rgba(101, 67, 33, 0.8) 50%,
+    rgba(139, 69, 19, 0.8) 100%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2px;
+}
+
+/* Transition Text */
+.transition-text {
+  text-align: center;
+  color: white;
+  font-family: var(--font-mono);
+  animation: pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.8; }
+  to { opacity: 1; }
+}
+
+.ff-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+.ff-label {
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: var(--warm-gold);
+  margin-bottom: 0.5rem;
+}
+
+.ff-destination {
+  font-size: 2rem;
+  font-weight: 900;
+  color: white;
+  letter-spacing: 3px;
+  text-shadow: 0 0 20px rgba(74, 144, 226, 0.8);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .transition-cassette {
+    width: 160px;
+    height: 100px;
+    padding: 15px;
+  }
+
+  .cassette-reel {
+    width: 40px;
+    height: 40px;
+  }
+
+  .reel-inner {
+    width: 32px;
+    height: 32px;
+  }
+
+  .reel-center {
+    width: 12px;
+    height: 12px;
+  }
+
+  .cassette-tape-strip {
+    width: 50px;
+    height: 6px;
+  }
+
+  .ff-icon {
+    font-size: 2.5rem;
+  }
+
+  .ff-destination {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .transition-cassette {
+    width: 140px;
+    height: 90px;
+  }
+
+  .ff-destination {
+    font-size: 1rem;
+  }
+}

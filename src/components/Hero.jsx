@@ -1,11 +1,11 @@
 import '../styles/Hero.css';
+import PropTypes from 'prop-types';
 import meImage from '../assets/images/me.webp';
 
-const Hero = () => {
+const Hero = ({ onNavigate }) => {
   const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (onNavigate) {
+      onNavigate(id);
     }
   };
 
@@ -72,6 +72,10 @@ const Hero = () => {
       </div>
     </section>
   );
+};
+
+Hero.propTypes = {
+  onNavigate: PropTypes.func.isRequired
 };
 
 export default Hero;

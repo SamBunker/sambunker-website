@@ -87,7 +87,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* scroll-behavior removed - using custom JS smooth scroll for better control */
   font-size: 16px;
 }
 
