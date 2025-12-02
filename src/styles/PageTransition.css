@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeIn 0.15s ease-in, fadeOut 0.15s ease-out 0.45s;
+  animation: fadeIn 0.15s ease-in forwards, fadeOut 0.15s ease-out 1.5s forwards;
 }
 
 @keyframes fadeIn {

@@ -7,13 +7,14 @@ const PageTransition = ({ targetSection, onComplete }) => {
 
   useEffect(() => {
     // Complete transition after animation
+    // CSS animation timing: fadeIn (150ms) + delay (450ms) + fadeOut (150ms) = 750ms
     const timer = setTimeout(() => {
       // Only call onComplete once
       if (!hasCompletedRef.current && onComplete) {
         hasCompletedRef.current = true;
         onComplete();
       }
-    }, 1000); // Total transition time
+    }, 750); // Match CSS animation duration exactly
 
     return () => {
       clearTimeout(timer);
