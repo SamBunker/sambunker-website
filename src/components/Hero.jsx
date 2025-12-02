@@ -55,11 +55,11 @@ const Hero = () => {
           <div className="hero-tech-stack">
             <span>React</span>
             <span className="divider">•</span>
-            <span>Node.js</span>
+            <span>UI/UX</span>
             <span className="divider">•</span>
-            <span>PHP</span>
+            <span>Docker</span>
             <span className="divider">•</span>
-            <span>Python</span>
+            <span>GitOps</span>
             <span className="divider">•</span>
             <span>DevOps</span>
           </div>
