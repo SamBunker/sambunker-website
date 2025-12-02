@@ -66,6 +66,10 @@
 .contact-icon {
   font-size: 1.8rem;
   flex-shrink: 0;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-item-text {
