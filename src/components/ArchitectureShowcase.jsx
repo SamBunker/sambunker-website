@@ -395,7 +395,13 @@ const ArchitectureShowcase = () => {
 
   // Handle cassette insertion
   const handleCassetteClick = async (project) => {
-    if (isAnimating || isEjecting || (isPlaying && selectedProject?.id === project.id)) return;
+    if (isAnimating || isEjecting) return;
+
+    // If clicking the same cassette that's already playing, just reopen the modal
+    if (isPlaying && selectedProject?.id === project.id) {
+      setShowFlowModal(true);
+      return;
+    }
 
     // If switching tapes, eject first
     if (isPlaying && selectedProject) {

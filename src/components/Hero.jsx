@@ -64,11 +64,11 @@ const Hero = () => {
             <span>DevOps</span>
           </div>
         </div>
+      </div>
 
-        <div className="scroll-indicator">
-          <span>Scroll down - see the story unfold</span>
-          <div className="scroll-arrow">↓</div>
-        </div>
+      <div className="scroll-indicator">
+        <span>Scroll down - see the story unfold</span>
+        <div className="scroll-arrow">↓</div>
       </div>
     </section>
   );
