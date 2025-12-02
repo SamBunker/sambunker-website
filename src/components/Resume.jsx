@@ -29,7 +29,7 @@ const Resume = () => {
           <div className="resume-viewer">
             <div className="resume-controls">
               <a
-                href="/Samuel_Bunker_Professional_Resume.pdf"
+                href="/Samuel_Bunker_Full-Stack_Resume.pdf"
                 download="Samuel_Bunker_Resume.pdf"
                 className="download-btn"
               >
@@ -37,7 +37,7 @@ const Resume = () => {
                 Download Resume (PDF)
               </a>
               <a
-                href="/Samuel_Bunker_Professional_Resume.pdf"
+                href="/Samuel_Bunker_Full-Stack_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="view-btn"
@@ -49,12 +49,12 @@ const Resume = () => {
 
             <div className="pdf-container">
               <iframe
-                src="/Samuel_Bunker_Professional_Resume.pdf"
+                src="/Samuel_Bunker_Full-Stack_Resume.pdf"
                 title="Samuel Bunker Resume"
                 className="pdf-iframe"
               />
               <div className="pdf-fallback">
-                <p>Unable to display PDF? <a href="/Samuel_Bunker_Professional_Resume.pdf" target="_blank" rel="noopener noreferrer">Click here to view</a></p>
+                <p>Unable to display PDF? <a href="/Samuel_Bunker_Full-Stack_Resume.pdf" target="_blank" rel="noopener noreferrer">Click here to view</a></p>
               </div>
             </div>
           </div>
