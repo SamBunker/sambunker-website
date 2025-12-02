@@ -27,11 +27,6 @@
   filter: drop-shadow(4px 4px 12px rgba(0, 0, 0, 0.3));
 }
 
-[data-theme="light"] .vinyl-left,
-[data-theme="light"] .vinyl-right {
-  opacity: 1;
-}
-
 .vinyl-left {
   left: -80px;
   top: 100px;
@@ -386,14 +381,12 @@
     height: 140px;
     left: -50px;
     top: 130px;
-    opacity: 0.1;
   }
 
   .vinyl-right {
     width: 150px;
     height: 150px;
     right: -60px;
-    opacity: 0.1;
   }
 }
 
