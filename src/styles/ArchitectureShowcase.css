@@ -366,15 +366,15 @@
   min-height: 30px;
 }
 
-.rec-indicator {
-  color: #FF0000;
+.play-indicator {
+  color: #00FF00;
   font-weight: 900;
-  animation: blink 1s step-end infinite;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
 }
 
 .now-playing {

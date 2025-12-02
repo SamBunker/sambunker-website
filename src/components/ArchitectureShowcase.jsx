@@ -71,7 +71,7 @@ const BoomBox = ({ selectedProject, isPlaying, onEject, onViewBlueprint }) => {
         <div className="lcd-content">
           {isPlaying && selectedProject ? (
             <>
-              <span className="rec-indicator">● REC</span>
+              <span className="play-indicator">▶ PLAY</span>
               <span className="now-playing">NOW PLAYING: {selectedProject.name.toUpperCase()}</span>
               <div className="lcd-buttons">
                 <button
