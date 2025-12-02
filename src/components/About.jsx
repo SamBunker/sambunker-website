@@ -24,13 +24,15 @@ const About = () => {
       { threshold: 0.3 }
     );
 
-    if (photoRef.current) {
-      observer.observe(photoRef.current);
+    const currentPhotoRef = photoRef.current;
+
+    if (currentPhotoRef) {
+      observer.observe(currentPhotoRef);
     }
 
     return () => {
-      if (photoRef.current) {
-        observer.unobserve(photoRef.current);
+      if (currentPhotoRef) {
+        observer.unobserve(currentPhotoRef);
       }
     };
   }, [hasAnimated]);

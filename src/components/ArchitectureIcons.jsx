@@ -120,7 +120,10 @@ export const DynamoDBIcon = ({ size = 40 }) => (
   </svg>
 );
 
-// Icon mapper
+// Icon mapping utilities
+// Note: These functions are kept in this file despite Fast Refresh warnings
+// because they're tightly coupled with the icon components above
+
 export const getNodeIcon = (type, size = 40) => {
   switch (type) {
     case 'user':
@@ -142,7 +145,6 @@ export const getNodeIcon = (type, size = 40) => {
   }
 };
 
-// Special icons for specific nodes
 export const getSpecialIcon = (label, type, size = 40) => {
   const lowerLabel = label.toLowerCase();
 
