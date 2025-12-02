@@ -35,7 +35,7 @@ const Projects = () => {
       description: 'A comprehensive, enterprise-grade project management system designed to track and manage development projects securely.',
       tech: ['PHP', 'MySQL', 'JSON APIs', 'XAMPP'],
       achievements: ['📖 Open Source', '🔐 Custom Auth', '📋 Project Tracking', '🌐 Webhook Support', '❤️ Active Support'],
-      liveUrl: '#',
+      liveUrl: null,
       githubUrl: 'https://github.com/SamBunker/code-bunker'
     },
     {
@@ -55,17 +55,17 @@ const Projects = () => {
       status: 'trophy',
       description: 'Won 1st place in a Hackathon. Built a one-page website for a local non-profit using React components and rapid prototyping.',
       tech: ['React', 'Rapid Prototyping', 'UI/UX'],
-      achievements: ['🏆 1st Place', '⚡ Built in 24hrs', '🎨 Clean Design'],
+      achievements: ['🏆 1st Place', '⚡ Built in 48hrs', '🎨 Clean Design'],
       liveUrl: null,
-      githubUrl: '#'
+      githubUrl: 'https://github.com/SamBunker/Hackathon2023'
     },
     {
       title: 'Graphic Design Portfolio',
       subtitle: 'Behance Showcase',
       status: 'creative',
-      description: 'Professional graphic design work showcasing UI/UX designs, branding, and visual communications.',
-      tech: ['Figma', 'Adobe XD', 'Photoshop', 'Illustrator'],
-      achievements: ['🎨 UI/UX Design', '🖼️ Branding', '✨ Visual Design'],
+      description: 'Professional graphic design work featuring UI/UX designs, visual communications, and street art photography.',
+      tech: ['Photography', 'Figma', 'Adobe XD', 'Photoshop', 'Illustrator'],
+      achievements: ['📸 Street Art Photography', '✨ Creative Technologist', '🎨 Visual Storytelling'],
       liveUrl: 'https://behance.net/samuelbunker',
       githubUrl: null
     }
