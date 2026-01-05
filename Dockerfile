@@ -28,8 +28,11 @@ RUN npm install -g serve
 # Step 10: Copy the built files from the builder stage
 COPY --from=builder /usr/src/app/dist ./dist
 
+# Step 10b: Copy serve configuration
+COPY serve.json ./
+
 # Step 11: Expose the port that the app will run on
 EXPOSE 3001
 
-# Step 12: Serve the static files on port 3001
-CMD ["serve", "-s", "dist", "-l", "3001"]
+# Step 12: Serve the static files on port 3001 with configuration
+CMD ["serve", "-s", "dist", "-l", "3001", "-c", "serve.json"]
