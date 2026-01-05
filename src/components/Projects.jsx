@@ -45,8 +45,8 @@ const Projects = () => {
       description: 'Cultivated a small business around selling authored NFC-tappable business cards to students and enterprise companies.',
       tech: ['E-commerce', 'Marketing', 'Web Management'],
       achievements: ['💼 Small Business', '📱 NFC Tech', '💰 Sales'],
-      liveUrl: 'https://www.tapmein.online',
-      previewUrl: 'https://www.tapmein.online',
+      liveUrl: 'https://www.tapmein.online/',
+      previewUrl: 'https://www.tapmein.online/',
       githubUrl: null
     },
     {

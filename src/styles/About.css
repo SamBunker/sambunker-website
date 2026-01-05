@@ -659,6 +659,39 @@
   border-radius: var(--radius-sm);
 }
 
+/* Journey Section */
+.journey-content {
+  margin-top: var(--spacing-md);
+}
+
+.journey-content p {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.journey-content p strong {
+  color: var(--sky-blue-dark);
+  font-weight: 700;
+}
+
+.journey-content p em {
+  color: var(--warm-gold);
+  font-style: italic;
+  font-weight: 600;
+}
+
+.journey-closing {
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--sky-blue-dark);
+  text-align: center !important;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 3px solid var(--sky-blue-medium);
+}
+
 /* Entrepreneurial Intro Statement */
 .entrepreneurial-intro {
   margin: var(--spacing-xl) 0;
