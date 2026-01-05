@@ -5,7 +5,6 @@ services:
   sambunker-portfolio:
     build: .
     restart: unless-stopped
-    container_name: sambunker-portfolio
     ports:
       - "${INTERNAL_PORT}:3001"
     environment:
