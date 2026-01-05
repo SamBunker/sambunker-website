@@ -28,8 +28,8 @@ RUN npm install -g serve
 # Step 10: Copy the built files from the builder stage
 COPY --from=builder /usr/src/app/dist ./dist
 
-# Step 10b: Copy serve configuration
-COPY serve.json ./
+# Step 10b: Copy serve configuration from builder stage
+COPY --from=builder /usr/src/app/serve.json ./serve.json
 
 # Step 11: Expose the port that the app will run on
 EXPOSE 3001
