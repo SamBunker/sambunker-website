@@ -2,6 +2,13 @@ import '../styles/Skills.css';
 
 const Skills = () => {
   const skills = {
+    ai: [
+      { name: 'Prompt Engineering', years: 2, level: 40 },
+      { name: 'AI Agents', years: 2, level: 40 },
+      { name: 'MCP Servers', years: 2, level: 40 },
+      { name: 'Local LLM Deployment', years: 1, level: 20 },
+      { name: 'Ollama', years: 1, level: 20 },
+    ],
     frontend: [
       { name: 'React', years: 2, level: 40 },
       { name: 'JavaScript', years: 5, level: 100 },
