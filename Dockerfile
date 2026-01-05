@@ -32,4 +32,4 @@ COPY --from=builder /usr/src/app/dist ./dist
 EXPOSE 3001
 
 # Step 12: Serve the static files on port 3001
-CMD ["serve", "-s", "dist", "-l", "3001"]
+CMD ["serve", "dist", "-l", "3001"]
