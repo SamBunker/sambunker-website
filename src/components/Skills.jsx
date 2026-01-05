@@ -3,47 +3,47 @@ import '../styles/Skills.css';
 const Skills = () => {
   const skills = {
     ai: [
-      { name: 'Prompt Engineering', years: 2, level: 40 },
-      { name: 'AI Agents', years: 2, level: 40 },
-      { name: 'MCP Servers', years: 2, level: 40 },
+      { name: 'Structured Deployment', years: 3, level: 50 },
+      { name: 'Prompt Engineering', years: 2, level: 90 },
+      { name: 'AI Agents', years: 2, level: 50 },
+      { name: 'MCP Servers', years: 2, level: 70 },
+      { name: 'LLM Integration', years: 2, level: 30 },
       { name: 'Local LLM Deployment', years: 1, level: 20 },
-      { name: 'Ollama', years: 1, level: 20 },
     ],
     frontend: [
-      { name: 'React', years: 2, level: 40 },
-      { name: 'JavaScript', years: 5, level: 100 },
-      { name: 'HTML5', years: 5, level: 100 },
-      { name: 'CSS3', years: 5, level: 100 },
+      { name: 'React', years: 2, level: 60 },
+      { name: 'JavaScript', years: 6, level: 90 },
+      { name: 'HTML5', years: 6, level: 100 },
+      { name: 'CSS3', years: 6, level: 100 },
       { name: 'Bootstrap', years: 4, level: 80 },
       { name: 'jQuery', years: 3, level: 60 }
     ],
     backend: [
-      { name: 'Node.js', years: 4, level: 80 },
-      { name: 'Express.js', years: 3, level: 60 },
-      { name: 'PHP', years: 5, level: 100 },
-      { name: 'MySQL', years: 5, level: 100 },
-      { name: 'Python', years: 2, level: 40 },
-      { name: 'REST APIs', years: 4, level: 80 }
+      { name: 'Node.js', years: 5, level: 90 },
+      { name: 'Express.js', years: 4, level: 70 },
+      { name: 'PHP', years: 5, level: 70 },
+      { name: 'MySQL', years: 6, level: 90 },
+      { name: 'Python', years: 3, level: 60 },
+      { name: 'RESTful API', years: 5, level: 80 }
     ],
     devops: [
       { name: 'Docker', years: 2, level: 40 },
-      { name: 'Git/GitHub', years: 5, level: 100 },
-      { name: 'CI/CD', years: 2, level: 40 },
+      { name: 'Git/GitHub', years: 6, level: 90 },
+      { name: 'CI/CD', years: 2, level: 50 },
       { name: 'Linux', years: 3, level: 60 },
       { name: 'Apache', years: 4, level: 80 },
-      { name: 'Bash', years: 3, level: 60 }
+      { name: 'Bash', years: 3, level: 50 }
     ],
     design: [
-      { name: 'Figma', years: 3, level: 60 },
-      { name: 'Adobe XD', years: 2, level: 40 },
-      { name: 'UI/UX Design', years: 4, level: 80 },
+      { name: 'Figma', years: 4, level: 80 },
+      { name: 'Adobe XD', years: 3, level: 80 },
+      { name: 'UI/UX Design', years: 5, level: 80 },
       { name: 'Wireframing', years: 4, level: 80 },
-      { name: 'Responsive Design', years: 5, level: 100 },
+      { name: 'Responsive Design', years: 5, level: 90 },
       { name: 'Accessibility', years: 3, level: 60 }
     ],
     software_engineer: [
       { name: 'Object-Oriented Programming (OOP)', years: 4, level: 80 },
-      { name: 'Python', years: 3, level: 60 },
       { name: 'Java', years: 2, level: 40 },
       { name: 'Software Architecture Principles', years: 3, level: 70 },
       { name: 'Code Review & Collaboration', years: 3, level: 60 },
@@ -51,13 +51,11 @@ const Skills = () => {
       { name: 'Clean Code Practices', years: 4, level: 80 }
     ],
     project_management: [
-      { name: 'Agile / Scrum Methodology', years: 2, level: 50 },
-      { name: 'Waterfall Methodology', years: 2, level: 50 },
+      { name: 'Agile / Scrum Methodology', years: 3, level: 60 },
+      { name: 'Waterfall Methodology', years: 3, level: 60 },
       { name: 'Risk Management', years: 2, level: 50 },
       { name: 'Trello', years: 3, level: 60 },
       { name: 'Jira', years: 3, level: 60 },
-      { name: 'ConnectWise Manage', years: 1, level: 20 },
-      { name: 'Moovila', years: 1, level: 20 }
     ],
   };
 
@@ -79,12 +77,12 @@ const Skills = () => {
 
         {/* Skills Grid */}
         <div className="skills-grid">
-          {/* AI */}
+          {/* ML & LLM */}
           <div className="skill-category">
             <div className="tape-reel tape-reel-right"></div>
             <div className="category-header">
-              <span className="category-icon">💻</span>
-              <h3>Artificial Intelligence</h3>
+              <span className="category-icon">🤖</span>
+              <h3>ML & LLM</h3>
             </div>
             <div className="skill-list">
               {skills.ai.map((skill, index) => (
