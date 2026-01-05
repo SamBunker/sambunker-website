@@ -79,6 +79,29 @@ const Skills = () => {
 
         {/* Skills Grid */}
         <div className="skills-grid">
+          {/* AI */}
+          <div className="skill-category">
+            <div className="tape-reel tape-reel-right"></div>
+            <div className="category-header">
+              <span className="category-icon">💻</span>
+              <h3>Artificial Intelligence</h3>
+            </div>
+            <div className="skill-list">
+              {skills.ai.map((skill, index) => (
+                <div key={index} className="skill-item">
+                  <div className="skill-name">{skill.name}</div>
+                  <div className="skill-bar-container">
+                    <div
+                      className="skill-bar"
+                      style={{ width: `${skill.level}%` }}
+                      data-years={`${skill.years}yr${skill.years > 1 ? 's' : ''}`}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
           {/* Frontend */}
           <div className="skill-category">
             <div className="tape-reel tape-reel-right"></div>
