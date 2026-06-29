@@ -133,6 +133,44 @@ const About = () => {
           </div>
 
           <div className="about-text-section">
+            <h3 className="subsection-title">🎯 THE JOURNEY</h3>
+            <div className="text-content journey-content">
+              <p>
+                Since high school, I've been building websites, servers, apps, and Discord bots, always curious about how
+                systems connect. Started with HTML/CSS in Notepad (no IDE, no problem), then dove into dynamic content
+                using Apache, XAMPP, PHP, and MySQL. Hosting Minecraft servers taught me networking basics like DNS,
+                port forwarding, Cloudflare, and domain registration.
+              </p>
+
+              <p>
+                At Juniata College, I earned a B.S. in Information Technology while exploring web dev, UI/UX, Android
+                programming, 3D design, and security. I competed in two hackathons with <strong>Alpha Beta Debug</strong>,
+                placing <strong>1st both years</strong>. I also launched my own startup, <strong>Tap Me In</strong>,
+                and built Shopify themes for clients.
+              </p>
+
+              <p>
+                Post-graduation, I focused on full-stack development: React, Node.js, Express.js, and Handlebars. I worked
+                as a Project Coordinator at <strong>Reclamere</strong>, managing 78+ cybersecurity projects valued at $900K+,
+                and freelanced while writing my own contracts.
+              </p>
+
+              <p>
+                Now I'm a Web Developer Contractor at <strong>The Midtown Group</strong>, building and enhancing websites
+                on <strong>SHiNE</strong>, a Drupal 10-based cooperative web platform, while continuing to ship
+                full-stack projects independently, including client work like{' '}
+                <a href="https://awdesignfoto.com" target="_blank" rel="noopener noreferrer">awdesignfoto.com</a> and{' '}
+                <a href="https://lannay.com" target="_blank" rel="noopener noreferrer">lannay.com</a>.
+              </p>
+
+              <p className="journey-closing">
+                <strong>The through line?</strong> I love building things. Whether solo or in a team, I'm comfortable with
+                GitHub/Bitbucket, Docker, CI/CD, and turning client goals into polished products.
+              </p>
+            </div>
+          </div>
+
+          <div className="about-text-section">
             <h3 className="subsection-title">💼 SMALL BUSINESS OWNER</h3>
             <div className="business-content">
               <div className="business-card-float">

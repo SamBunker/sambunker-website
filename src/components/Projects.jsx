@@ -7,6 +7,28 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'AW Design & Foto',
+      subtitle: 'Photography Portfolio',
+      status: 'platinum',
+      description: 'A portfolio built for a real photographer. The goal was simple: get out of the way and let the work land. Fast, clean, and built to handle scale.',
+      tech: ['React', 'Wrangler', 'Edge Hosted', 'GitHub Actions', 'Resend (emails)', 'Turnstile (bot prevention)'],
+      achievements: ['📸 Real Photographer Client', '🖼️ 1,100+ Gallery Images', '🔧 Automatic Image Optimization', '🔒 Bot-Protected Forms'],
+      liveUrl: 'https://awfoto-website.samuelbunker.workers.dev/',
+      previewUrl: 'https://awfoto-website.samuelbunker.workers.dev/',
+      githubUrl: null
+    },
+    {
+      title: 'Lannay.com',
+      subtitle: 'Brand Strategist Portfolio',
+      status: 'platinum',
+      description: "A freelance portfolio for brand strategist Chloe Webb. The ocean-depth concept mirrors her brand: layered, immersive, and built to pull people in.",
+      tech: ['React', 'Wrangler', 'Edge Hosted', 'GitHub Actions', 'Resend (emails)', 'Turnstile (bot prevention)'],
+      achievements: ['💼 Freelance Client', '🎭 Brand-Driven Design', '🔒 Bot-Protected Forms'],
+      liveUrl: 'https://lannay-website.samuelbunker.workers.dev/',
+      previewUrl: 'https://lannay-website.samuelbunker.workers.dev/',
+      githubUrl: null
+    },
+    {
       title: 'Harper and Lyre',
       subtitle: 'Professional Gaming Studio Site',
       status: 'platinum',
@@ -45,8 +67,8 @@ const Projects = () => {
       description: 'Cultivated a small business around selling authored NFC-tappable business cards to students and enterprise companies.',
       tech: ['E-commerce', 'Marketing', 'Web Management'],
       achievements: ['💼 Small Business', '📱 NFC Tech', '💰 Sales'],
-      liveUrl: 'https://www.tapmein.online',
-      previewUrl: 'https://www.tapmein.online',
+      liveUrl: 'https://www.tapmein.online/',
+      previewUrl: 'https://www.tapmein.online/',
       githubUrl: null
     },
     {
@@ -58,6 +80,17 @@ const Projects = () => {
       achievements: ['🏆 1st Place', '⚡ Built in 48hrs', '🎨 Clean Design'],
       liveUrl: null,
       githubUrl: 'https://github.com/SamBunker/Hackathon2023'
+    },
+    {
+      title: 'RuneFeed',
+      subtitle: 'Real-Time OSRS Grand Exchange Feed',
+      status: 'creative',
+      description: 'A real-time volume spike detection system for Old School RuneScape\'s Grand Exchange. Detects massive sell-offs, buy-ins, and price surges as they happen. Full-stack: polling server, WebSocket broadcast, CLI client on npm, and a live dashboard.',
+      tech: ['TypeScript', 'Node.js', 'WebSocket', 'React', 'Docker'],
+      achievements: ['📡 Live WebSocket Feed', '📦 Published on npm', '🔍 Spike Detection Engine', '📈 Prediction System'],
+      liveUrl: 'https://runefeed.cc',
+      previewUrl: 'https://runefeed.cc',
+      githubUrl: 'https://github.com/SamBunker/runefeed'
     },
     {
       title: 'Graphic Design Portfolio',
