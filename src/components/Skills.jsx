@@ -258,7 +258,7 @@ const Skills = () => {
           <div className="extras-grid">
             <div className="extra-card">
               <h4>Cooperative Web Dev</h4>
-              <p>Custom Drupal 10 modules and enhancements on SHiNE, serving hundreds of cooperative member sites</p>
+              <p>Drupal 10 module development and platform enhancements for a cooperative network of hundreds of websites</p>
             </div>
             <div className="extra-card">
               <h4>Project Management</h4>
