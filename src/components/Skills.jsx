@@ -31,14 +31,6 @@ const Skills = () => {
       { name: 'Bash', years: 3, level: 50 },
     ],
     design: [
-      { name: 'Figma', years: 4, level: 80 },
-      { name: 'Adobe XD', years: 3, level: 80 },
-      { name: 'UI/UX Design', years: 5, level: 80 },
-      { name: 'Wireframing', years: 4, level: 80 },
-      { name: 'Responsive Design', years: 5, level: 90 },
-      { name: 'Accessibility', years: 3, level: 60 }
-    ],
-    design: [
       { name: 'UI/UX Design', years: 5, level: 80 },
       { name: 'Responsive Design', years: 5, level: 80 },
       { name: 'Figma', years: 4, level: 65 },
@@ -275,6 +267,10 @@ const Skills = () => {
             <div className="extra-card">
               <h4>Product Sales</h4>
               <p>Tap Me In • Grew from $0 to $1,000 net in the first year selling NFC business cards while in college</p>
+            </div>
+            <div className="extra-card">
+              <h4>Freelance Commissions</h4>
+              <p>Available for client work • Have built and shipped sites like awdesignfoto.com and lannay.com</p>
             </div>
           </div>
         </div>

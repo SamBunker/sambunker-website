@@ -12,7 +12,7 @@ const Projects = () => {
       status: 'platinum',
       description: 'A portfolio built for a real photographer. The goal was simple: get out of the way and let the work land. Fast, clean, and built to handle scale.',
       tech: ['React', 'Wrangler', 'Edge Hosted', 'GitHub Actions', 'Resend (emails)', 'Turnstile (bot prevention)'],
-      achievements: ['📸 Real Photographer Client', '🖼️ 1,100+ Gallery Images', '🔄 Auto-Deployed', '✉️ Spam-Protected Contact'],
+      achievements: ['📸 Real Photographer Client', '🖼️ 1,100+ Gallery Images', '🔧 Automatic Image Optimization', '🔒 Bot-Protected Forms'],
       liveUrl: 'https://awdesignfoto.com',
       previewUrl: 'https://awdesignfoto.com',
       githubUrl: null
@@ -23,7 +23,7 @@ const Projects = () => {
       status: 'platinum',
       description: "A freelance portfolio for brand strategist Chloe Webb. The ocean-depth concept mirrors her brand: layered, immersive, and built to pull people in.",
       tech: ['React', 'Wrangler', 'Edge Hosted', 'GitHub Actions', 'Resend (emails)', 'Turnstile (bot prevention)'],
-      achievements: ['💼 Freelance Client', '🎨 Stunning Design', '🐳 Dockerized Dev', '📧 Resend Email API'],
+      achievements: ['💼 Freelance Client', '🎭 Brand-Driven Design', '🔒 Bot-Protected Forms'],
       liveUrl: 'https://lannay.com',
       previewUrl: 'https://lannay.com',
       githubUrl: null
