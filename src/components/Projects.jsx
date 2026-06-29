@@ -10,9 +10,9 @@ const Projects = () => {
       title: 'AW Design & Foto',
       subtitle: 'Photography Portfolio — awdesignfoto.com',
       status: 'platinum',
-      description: 'A professional photography and design portfolio built on a serverless edge stack with automated deployment from push to production. Manages hundreds of gallery images through a markdown-driven content system.',
+      description: 'A portfolio built for a real photographer. The goal was simple: get out of the way and let the work land. Fast, clean, and built to handle scale.',
       tech: ['React', 'Cloudflare Pages + Workers', 'GitHub Actions', 'Resend', 'Turnstile'],
-      achievements: ['☁️ Edge Deployed', '🤖 CI/CD Automated', '📸 1,100+ Gallery Images', '🛡️ Bot Protected'],
+      achievements: ['📸 Real Photographer Client', '🖼️ 1,100+ Gallery Images', '🔄 Auto-Deployed', '✉️ Spam-Protected Contact'],
       liveUrl: 'https://awdesignfoto.com',
       previewUrl: 'https://awdesignfoto.com',
       githubUrl: null
@@ -21,9 +21,9 @@ const Projects = () => {
       title: 'Lannay.com',
       subtitle: 'Freelance Portfolio — Brand Strategist Chloe Webb',
       status: 'platinum',
-      description: 'A freelance portfolio website for brand strategist Chloe Webb, with a fully automated build and release pipeline backing an immersive ocean-depth UI and interactive project showcase.',
+      description: "A freelance portfolio for brand strategist Chloe Webb. The ocean-depth concept mirrors her brand — layered, immersive, and built to pull people in. Behind it, a single Cloudflare Worker handles both asset delivery and API routing — no separate backend needed.",
       tech: ['React', 'Cloudflare Workers', 'GitHub Actions', 'Docker', 'Resend'],
-      achievements: ['🎨 Custom Themed UI', '🤖 CI/CD Automated', '🐳 Dockerized', '💼 Freelance Client'],
+      achievements: ['💼 Freelance Client', '☁️ Worker-Served SPA', '🐳 Dockerized Dev', '📧 Resend Email API'],
       liveUrl: 'https://lannay.com',
       previewUrl: 'https://lannay.com',
       githubUrl: null
@@ -84,7 +84,7 @@ const Projects = () => {
     {
       title: 'RuneFeed',
       subtitle: 'Real-Time OSRS Grand Exchange Feed',
-      status: 'platinum',
+      status: 'creative',
       description: 'A real-time volume spike detection system for Old School RuneScape\'s Grand Exchange. Detects massive sell-offs, buy-ins, and price surges as they happen. Full-stack: polling server, WebSocket broadcast, CLI client on npm, and a live dashboard.',
       tech: ['TypeScript', 'Node.js', 'WebSocket', 'React', 'Docker'],
       achievements: ['📡 Live WebSocket Feed', '📦 Published on npm', '🔍 Spike Detection Engine', '📈 Prediction System'],
