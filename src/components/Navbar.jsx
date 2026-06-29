@@ -37,7 +37,7 @@ const Navbar = ({ theme, toggleTheme, onNavigate }) => {
         <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           <li><button onClick={() => scrollToSection('home')} className="nav-link">HOME</button></li>
           <li><button onClick={() => scrollToSection('story')} className="nav-link">THE STORY</button></li>
-          <li><button onClick={() => scrollToSection('arsenal')} className="nav-link">THE ARSENAL</button></li>
+          <li><button onClick={() => scrollToSection('arsenal')} className="nav-link">THE SKILL SET</button></li>
           <li><button onClick={() => scrollToSection('discography')} className="nav-link">THE WORKS</button></li>
           <li><button onClick={() => scrollToSection('architecture')} className="nav-link">BUNK-BOX</button></li>
           <li><button onClick={() => scrollToSection('resume')} className="nav-link">RESUME</button></li>

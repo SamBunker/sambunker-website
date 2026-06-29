@@ -2,41 +2,33 @@ import '../styles/Skills.css';
 
 const Skills = () => {
   const skills = {
-    ai: [
-      { name: 'Structured Deployment', years: 3, level: 50 },
-      { name: 'Prompt Engineering', years: 2, level: 90 },
-      { name: 'AI Agents', years: 2, level: 50 },
-      { name: 'MCP Servers', years: 2, level: 70 },
-      { name: 'LLM Integration', years: 2, level: 30 },
-      { name: 'Local LLM Deployment', years: 1, level: 20 },
-    ],
     frontend: [
-      { name: 'React', years: 3, level: 70 },
-      { name: 'JavaScript', years: 6, level: 90 },
-      { name: 'HTML5', years: 6, level: 100 },
-      { name: 'CSS3', years: 6, level: 100 },
-      { name: 'Twig', years: 1, level: 60 },
-      { name: 'Bootstrap', years: 4, level: 80 },
-      { name: 'jQuery', years: 3, level: 60 },
-      { name: 'Vite', years: 1, level: 65 },
+      { name: 'HTML5', years: 6, level: 95 },
+      { name: 'CSS3', years: 6, level: 95 },
+      { name: 'JavaScript', years: 6, level: 95 },
+      { name: 'React', years: 3, level: 50 },
+      { name: 'Bootstrap', years: 4, level: 65 },
+      { name: 'jQuery', years: 3, level: 50 },
+      { name: 'Vite', years: 3, level: 50 },
+      { name: 'Twig', years: 1, level: 20 },
     ],
     backend: [
-      { name: 'Drupal 10', years: 1, level: 60 },
-      { name: 'Node.js', years: 5, level: 90 },
-      { name: 'Express.js', years: 4, level: 70 },
-      { name: 'PHP', years: 6, level: 80 },
-      { name: 'MySQL', years: 6, level: 90 },
-      { name: 'Python', years: 3, level: 60 },
-      { name: 'RESTful API', years: 5, level: 80 }
+      { name: 'PHP', years: 5, level: 80 },
+      { name: 'MySQL', years: 6, level: 95 },
+      { name: 'Node.js', years: 4, level: 65 },
+      { name: 'Express.js', years: 4, level: 65 },
+      { name: 'Python', years: 4, level: 65 },
+      { name: 'RESTful API', years: 5, level: 80 },
+      { name: 'Drupal 10', years: 1, level: 20 },
     ],
     devops: [
+      { name: 'Git/GitHub', years: 6, level: 95 },
       { name: 'Docker', years: 3, level: 50 },
-      { name: 'Git/GitHub', years: 6, level: 90 },
-      { name: 'CI/CD (GitHub Actions)', years: 3, level: 65 },
-      { name: 'Cloudflare Workers/Pages', years: 1, level: 70 },
-      { name: 'Linux', years: 3, level: 60 },
-      { name: 'Apache', years: 4, level: 80 },
-      { name: 'Bash', years: 3, level: 50 }
+      { name: 'CI/CD (GitHub Actions)', years: 3, level: 50 },
+      { name: 'Cloud Hosting (CF, Render)', years: 1, level: 20 },
+      { name: 'Linux', years: 3, level: 50 },
+      { name: 'Apache', years: 4, level: 65 },
+      { name: 'Bash', years: 3, level: 50 },
     ],
     design: [
       { name: 'Figma', years: 4, level: 80 },
@@ -46,27 +38,43 @@ const Skills = () => {
       { name: 'Responsive Design', years: 5, level: 90 },
       { name: 'Accessibility', years: 3, level: 60 }
     ],
+    design: [
+      { name: 'UI/UX Design', years: 5, level: 80 },
+      { name: 'Responsive Design', years: 5, level: 80 },
+      { name: 'Figma', years: 4, level: 65 },
+      { name: 'Adobe XD', years: 3, level: 50 },
+      { name: 'Wireframing', years: 4, level: 65 },
+      { name: 'Accessibility (WCAG)', years: 3, level: 50 },
+    ],
     software_engineer: [
-      { name: 'Object-Oriented Programming (OOP)', years: 4, level: 80 },
-      { name: 'Java', years: 2, level: 40 },
-      { name: 'Software Architecture Principles', years: 3, level: 70 },
-      { name: 'Code Review & Collaboration', years: 3, level: 60 },
-      { name: 'API Design & Integration', years: 4, level: 80 },
-      { name: 'Clean Code Practices', years: 4, level: 80 }
+      { name: 'Object-Oriented Programming (OOP)', years: 4, level: 65 },
+      { name: 'Clean Code Practices', years: 4, level: 65 },
+      { name: 'Software Architecture Principles', years: 3, level: 50 },
+      { name: 'API Design & Integration', years: 3, level: 50 },
+      { name: 'Code Review & Collaboration', years: 3, level: 50 },
+      { name: 'Java', years: 2, level: 35 },
     ],
     project_management: [
-      { name: 'Agile / Scrum Methodology', years: 3, level: 60 },
-      { name: 'Waterfall Methodology', years: 3, level: 60 },
-      { name: 'Risk Management', years: 2, level: 50 },
-      { name: 'Trello', years: 3, level: 60 },
-      { name: 'Jira', years: 3, level: 60 },
+      { name: 'Agile / Scrum Methodology', years: 3, level: 50 },
+      { name: 'Waterfall Methodology', years: 3, level: 50 },
+      { name: 'Risk Management', years: 2, level: 35 },
+      { name: 'Trello', years: 3, level: 50 },
+      { name: 'Jira', years: 3, level: 50 },
+    ],
+    ai: [
+      { name: 'Prompt Engineering', years: 2, level: 35 },
+      { name: 'AI Agents', years: 3, level: 50 },
+      { name: 'MCP Servers', years: 2, level: 35 },
+      { name: 'Structured Deployment', years: 3, level: 50 },
+      { name: 'LLM Integration', years: 2, level: 35 },
+      { name: 'Local LLM Deployment', years: 2, level: 35 },
     ],
   };
 
   return (
     <section id="arsenal" className="skills-section section">
       <div className="container">
-        <h2 className="section-title">THE ARSENAL</h2>
+        <h2 className="section-title">THE SKILL SET</h2>
         <p className="section-subtitle">"Tools of the Trade"</p>
 
         {/* Opening Verse */}
@@ -81,29 +89,6 @@ const Skills = () => {
 
         {/* Skills Grid */}
         <div className="skills-grid">
-          {/* ML & LLM */}
-          <div className="skill-category">
-            <div className="tape-reel tape-reel-right"></div>
-            <div className="category-header">
-              <span className="category-icon">🤖</span>
-              <h3>ML & LLM</h3>
-            </div>
-            <div className="skill-list">
-              {skills.ai.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  <div className="skill-name">{skill.name}</div>
-                  <div className="skill-bar-container">
-                    <div
-                      className="skill-bar"
-                      style={{ width: `${skill.level}%` }}
-                      data-years={`${skill.years}yr${skill.years > 1 ? 's' : ''}`}
-                    ></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Frontend */}
           <div className="skill-category">
             <div className="tape-reel tape-reel-right"></div>
@@ -196,11 +181,11 @@ const Skills = () => {
             </div>
           </div>
 
-          {/* Project Management */}
+          {/* Software Engineering */}
           <div className="skill-category">
             <div className="tape-reel tape-reel-right"></div>
             <div className="category-header">
-              <span className="category-icon">🎨</span>
+              <span className="category-icon">🛠️</span>
               <h3>SOFTWARE ENGINEER</h3>
             </div>
             <div className="skill-list">
@@ -219,17 +204,38 @@ const Skills = () => {
             </div>
           </div>
 
-
-
           {/* Project Management */}
           <div className="skill-category">
             <div className="tape-reel tape-reel-right"></div>
             <div className="category-header">
-              <span className="category-icon">🎨</span>
+              <span className="category-icon">📋</span>
               <h3>PROJECT MGMT.</h3>
             </div>
             <div className="skill-list">
               {skills.project_management.map((skill, index) => (
+                <div key={index} className="skill-item">
+                  <div className="skill-name">{skill.name}</div>
+                  <div className="skill-bar-container">
+                    <div
+                      className="skill-bar"
+                      style={{ width: `${skill.level}%` }}
+                      data-years={`${skill.years}yr${skill.years > 1 ? 's' : ''}`}
+                    ></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ML & LLM — last */}
+          <div className="skill-category">
+            <div className="tape-reel tape-reel-right"></div>
+            <div className="category-header">
+              <span className="category-icon">🤖</span>
+              <h3>ML & LLM</h3>
+            </div>
+            <div className="skill-list">
+              {skills.ai.map((skill, index) => (
                 <div key={index} className="skill-item">
                   <div className="skill-name">{skill.name}</div>
                   <div className="skill-bar-container">
@@ -251,20 +257,24 @@ const Skills = () => {
           <h3 className="extras-title">🎯 THE EXTRAS</h3>
           <div className="extras-grid">
             <div className="extra-card">
-              <h4>Product Sales</h4>
-              <p>Tap Me In • Net $1,000 in the first year from $0 while in college</p>
+              <h4>Cooperative Web Dev</h4>
+              <p>Custom Drupal 10 modules and enhancements on SHiNE, serving hundreds of cooperative member sites</p>
             </div>
             <div className="extra-card">
               <h4>Project Management</h4>
-              <p>Managed over $900,000 in cybersecurity projects (NIST, HIPAA)</p>
+              <p>Managed 78 cybersecurity projects valued at $900K+ with a 98.7% on-time, under-budget delivery rate</p>
             </div>
             <div className="extra-card">
               <h4>Hackathons</h4>
-              <p>2x First Place Winner • Web Development (UI/UX Design and Implementation)</p>
+              <p>2x First Place Winner • Built and shipped full websites in under 48 hours</p>
             </div>
             <div className="extra-card">
               <h4>Self-Hosting</h4>
-              <p>Manage homelab with multiple microservices, websites, and Discord bots</p>
+              <p>Homelab running containerized microservices, personal websites, and Discord bots via Docker and self-hosted infrastructure</p>
+            </div>
+            <div className="extra-card">
+              <h4>Product Sales</h4>
+              <p>Tap Me In • Grew from $0 to $1,000 net in the first year selling NFC business cards while in college</p>
             </div>
           </div>
         </div>
