@@ -8,10 +8,10 @@ const Projects = () => {
   const projects = [
     {
       title: 'AW Design & Foto',
-      subtitle: 'Photography Portfolio — awdesignfoto.com',
+      subtitle: 'Photography Portfolio',
       status: 'platinum',
       description: 'A portfolio built for a real photographer. The goal was simple: get out of the way and let the work land. Fast, clean, and built to handle scale.',
-      tech: ['React', 'Cloudflare Pages + Workers', 'GitHub Actions', 'Resend', 'Turnstile'],
+      tech: ['React', 'Wrangler', 'Edge Hosted', 'GitHub Actions', 'Resend (emails)', 'Turnstile (bot prevention)'],
       achievements: ['📸 Real Photographer Client', '🖼️ 1,100+ Gallery Images', '🔄 Auto-Deployed', '✉️ Spam-Protected Contact'],
       liveUrl: 'https://awdesignfoto.com',
       previewUrl: 'https://awdesignfoto.com',
@@ -19,11 +19,11 @@ const Projects = () => {
     },
     {
       title: 'Lannay.com',
-      subtitle: 'Freelance Portfolio — Brand Strategist Chloe Webb',
+      subtitle: 'Brand Strategist Portfolio',
       status: 'platinum',
-      description: "A freelance portfolio for brand strategist Chloe Webb. The ocean-depth concept mirrors her brand — layered, immersive, and built to pull people in. Behind it, a single Cloudflare Worker handles both asset delivery and API routing — no separate backend needed.",
-      tech: ['React', 'Cloudflare Workers', 'GitHub Actions', 'Docker', 'Resend'],
-      achievements: ['💼 Freelance Client', '☁️ Worker-Served SPA', '🐳 Dockerized Dev', '📧 Resend Email API'],
+      description: "A freelance portfolio for brand strategist Chloe Webb. The ocean-depth concept mirrors her brand: layered, immersive, and built to pull people in.",
+      tech: ['React', 'Wrangler', 'Edge Hosted', 'GitHub Actions', 'Resend (emails)', 'Turnstile (bot prevention)'],
+      achievements: ['💼 Freelance Client', '🎨 Stunning Design', '🐳 Dockerized Dev', '📧 Resend Email API'],
       liveUrl: 'https://lannay.com',
       previewUrl: 'https://lannay.com',
       githubUrl: null
