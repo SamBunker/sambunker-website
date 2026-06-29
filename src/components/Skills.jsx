@@ -11,25 +11,29 @@ const Skills = () => {
       { name: 'Local LLM Deployment', years: 1, level: 20 },
     ],
     frontend: [
-      { name: 'React', years: 2, level: 60 },
+      { name: 'React', years: 3, level: 70 },
       { name: 'JavaScript', years: 6, level: 90 },
       { name: 'HTML5', years: 6, level: 100 },
       { name: 'CSS3', years: 6, level: 100 },
+      { name: 'Twig', years: 1, level: 60 },
       { name: 'Bootstrap', years: 4, level: 80 },
-      { name: 'jQuery', years: 3, level: 60 }
+      { name: 'jQuery', years: 3, level: 60 },
+      { name: 'Vite', years: 1, level: 65 },
     ],
     backend: [
+      { name: 'Drupal 10', years: 1, level: 60 },
       { name: 'Node.js', years: 5, level: 90 },
       { name: 'Express.js', years: 4, level: 70 },
-      { name: 'PHP', years: 5, level: 70 },
+      { name: 'PHP', years: 6, level: 80 },
       { name: 'MySQL', years: 6, level: 90 },
       { name: 'Python', years: 3, level: 60 },
       { name: 'RESTful API', years: 5, level: 80 }
     ],
     devops: [
-      { name: 'Docker', years: 2, level: 40 },
+      { name: 'Docker', years: 3, level: 50 },
       { name: 'Git/GitHub', years: 6, level: 90 },
-      { name: 'CI/CD', years: 2, level: 50 },
+      { name: 'CI/CD (GitHub Actions)', years: 3, level: 65 },
+      { name: 'Cloudflare Workers/Pages', years: 1, level: 70 },
       { name: 'Linux', years: 3, level: 60 },
       { name: 'Apache', years: 4, level: 80 },
       { name: 'Bash', years: 3, level: 50 }

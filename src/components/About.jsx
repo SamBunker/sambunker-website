@@ -155,6 +155,14 @@ const About = () => {
                 and freelanced while writing my own contracts.
               </p>
 
+              <p>
+                Now I'm a Web Developer Contractor at <strong>The Midtown Group</strong>, building and enhancing websites
+                on <strong>SHiNE</strong> — a Drupal 10-based cooperative web platform — while continuing to ship
+                full-stack projects independently, including client work like{' '}
+                <a href="https://awdesignfoto.com" target="_blank" rel="noopener noreferrer">awdesignfoto.com</a> and{' '}
+                <a href="https://lannay.com" target="_blank" rel="noopener noreferrer">lannay.com</a>.
+              </p>
+
               <p className="journey-closing">
                 <strong>The through line?</strong> I love building things. Whether solo or in a team, I'm comfortable with
                 GitHub/Bitbucket, Docker, CI/CD, and turning client goals into polished products.

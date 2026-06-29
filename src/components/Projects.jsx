@@ -7,6 +7,28 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'AW Design & Foto',
+      subtitle: 'Photography Portfolio — awdesignfoto.com',
+      status: 'platinum',
+      description: 'A professional photography and design portfolio built on a serverless edge stack with automated deployment from push to production. Manages hundreds of gallery images through a markdown-driven content system.',
+      tech: ['React', 'Cloudflare Pages + Workers', 'GitHub Actions', 'Resend', 'Turnstile'],
+      achievements: ['☁️ Edge Deployed', '🤖 CI/CD Automated', '📸 1,100+ Gallery Images', '🛡️ Bot Protected'],
+      liveUrl: 'https://awdesignfoto.com',
+      previewUrl: 'https://awdesignfoto.com',
+      githubUrl: null
+    },
+    {
+      title: 'Lannay.com',
+      subtitle: 'Freelance Portfolio — Brand Strategist Chloe Webb',
+      status: 'platinum',
+      description: 'A freelance portfolio website for brand strategist Chloe Webb, with a fully automated build and release pipeline backing an immersive ocean-depth UI and interactive project showcase.',
+      tech: ['React', 'Cloudflare Workers', 'GitHub Actions', 'Docker', 'Resend'],
+      achievements: ['🎨 Custom Themed UI', '🤖 CI/CD Automated', '🐳 Dockerized', '💼 Freelance Client'],
+      liveUrl: 'https://lannay.com',
+      previewUrl: 'https://lannay.com',
+      githubUrl: null
+    },
+    {
       title: 'Harper and Lyre',
       subtitle: 'Professional Gaming Studio Site',
       status: 'platinum',
@@ -58,6 +80,17 @@ const Projects = () => {
       achievements: ['🏆 1st Place', '⚡ Built in 48hrs', '🎨 Clean Design'],
       liveUrl: null,
       githubUrl: 'https://github.com/SamBunker/Hackathon2023'
+    },
+    {
+      title: 'RuneFeed',
+      subtitle: 'Real-Time OSRS Grand Exchange Feed',
+      status: 'platinum',
+      description: 'A real-time volume spike detection system for Old School RuneScape\'s Grand Exchange. Detects massive sell-offs, buy-ins, and price surges as they happen. Full-stack: polling server, WebSocket broadcast, CLI client on npm, and a live dashboard.',
+      tech: ['TypeScript', 'Node.js', 'WebSocket', 'React', 'Docker'],
+      achievements: ['📡 Live WebSocket Feed', '📦 Published on npm', '🔍 Spike Detection Engine', '📈 Prediction System'],
+      liveUrl: 'https://runefeed.cc',
+      previewUrl: 'https://runefeed.cc',
+      githubUrl: 'https://github.com/SamBunker/runefeed'
     },
     {
       title: 'Graphic Design Portfolio',
