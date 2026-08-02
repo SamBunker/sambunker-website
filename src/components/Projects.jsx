@@ -24,8 +24,8 @@ const Projects = () => {
       description: "A freelance portfolio for brand strategist Chloe Webb. The ocean-depth concept mirrors her brand: layered, immersive, and built to pull people in.",
       tech: ['React', 'Wrangler', 'Edge Hosted', 'GitHub Actions', 'Resend (emails)', 'Turnstile (bot prevention)'],
       achievements: ['💼 Freelance Client', '🎭 Brand-Driven Design', '🔒 Bot-Protected Forms'],
-      liveUrl: 'https://lannay-website.samuelbunker.workers.dev/',
-      previewUrl: 'https://lannay-website.samuelbunker.workers.dev/',
+      liveUrl: 'https://lannay.com/',
+      previewUrl: 'https://lannay.com/',
       githubUrl: null
     },
     {
