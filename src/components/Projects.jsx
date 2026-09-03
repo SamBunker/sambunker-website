@@ -13,8 +13,8 @@ const Projects = () => {
       description: 'A portfolio built for a real photographer. The goal was simple: get out of the way and let the work land. Fast, clean, and built to handle scale.',
       tech: ['React', 'Wrangler', 'Edge Hosted', 'GitHub Actions', 'Resend (emails)', 'Turnstile (bot prevention)'],
       achievements: ['📸 Real Photographer Client', '🖼️ 1,100+ Gallery Images', '🔧 Automatic Image Optimization', '🔒 Bot-Protected Forms'],
-      liveUrl: 'https://awfoto-website.samuelbunker.workers.dev/',
-      previewUrl: 'https://awfoto-website.samuelbunker.workers.dev/',
+      liveUrl: 'https://awdesignfoto.com/',
+      previewUrl: 'https://awdesignfoto.com/',
       githubUrl: null
     },
     {
@@ -46,8 +46,8 @@ const Projects = () => {
       description: 'A scalable content management system with role-based access control, data analytics, and automated deployment infrastructure.',
       tech: ['Express', 'MySQL', 'Handlebars', 'Analytics'],
       achievements: ['📊 Real-time Analytics', '🔒 Role-Based Access', '📱 Mobile-First'],
-      liveUrl: 'https://quotes.sambunker.com',
-      previewUrl: 'https://quotes.sambunker.com',
+      liveUrl: null,
+      previewUrl: null,
       githubUrl: 'https://github.com/SamBunker/afterdark-quotes-website'
     },
     {
@@ -67,8 +67,8 @@ const Projects = () => {
       description: 'Cultivated a small business around selling authored NFC-tappable business cards to students and enterprise companies.',
       tech: ['E-commerce', 'Marketing', 'Web Management'],
       achievements: ['💼 Small Business', '📱 NFC Tech', '💰 Sales'],
-      liveUrl: 'https://www.tapmein.online/',
-      previewUrl: 'https://www.tapmein.online/',
+      liveUrl: null,
+      previewUrl: null,
       githubUrl: null
     },
     {
@@ -88,8 +88,8 @@ const Projects = () => {
       description: 'A real-time volume spike detection system for Old School RuneScape\'s Grand Exchange. Detects massive sell-offs, buy-ins, and price surges as they happen. Full-stack: polling server, WebSocket broadcast, CLI client on npm, and a live dashboard.',
       tech: ['TypeScript', 'Node.js', 'WebSocket', 'React', 'Docker'],
       achievements: ['📡 Live WebSocket Feed', '📦 Published on npm', '🔍 Spike Detection Engine', '📈 Prediction System'],
-      liveUrl: 'https://runefeed.cc',
-      previewUrl: 'https://runefeed.cc',
+      liveUrl: null,
+      previewUrl: null,
       githubUrl: 'https://github.com/SamBunker/runefeed'
     },
     {
